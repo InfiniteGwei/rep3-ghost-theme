@@ -1,0 +1,30 @@
+{{! Partial: Feed }}
+
+<main class="feed">
+    <div class="feed__content">
+        {{#foreach posts}}
+            
+            {{#has tag="#ivy-layout-standard"}}
+                {{> "card/card-standard" class="feed__item"}}
+            {{else has tag="#ivy-layout-square"}}
+                {{> "card/card-square" class="feed__item"}}
+            {{else has tag="#ivy-layout-feature"}}
+                {{#if feature_image}}
+                    {{> "card/card-feature-hz" class="card-feature-hz--layout-feature feed__item"}}
+                {{else}}
+                    {{> "card/card-feature-hz" class="feed__item"}}
+                {{/if}}
+            {{else has tag="#ivy-layout-double"}}
+                {{#if feature_image}}
+                    {{> "card/card-standard" class="card--layout-double feed__item"}}
+                {{else}}
+                    {{> "card/card-standard" class="feed__item"}}
+                {{/if}}
+            {{else}}
+                {{> "card/card-standard" class="feed__item"}}
+            {{/has}}
+        {{/foreach}}
+        {{!-- {{> "subscribe" class="feed__item"}} --}}
+    </div>
+    {{pagination}}
+</main>
