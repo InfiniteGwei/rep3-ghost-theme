@@ -1,0 +1,51 @@
+/*------------------------------------------------------------------
+    Layout: Post
+-------------------------------------------------------------------*/
+
+.post {
+    display: flex;
+    justify-content: left;
+    align-items: flex-start;
+
+    &__main {
+        width: pxtorem(1030);
+        background: $color-white;
+        border-radius: 0 0 pxtorem(10) pxtorem(10);
+        overflow: hidden;
+
+        &--short {
+            border-radius: 0 0 0 pxtorem(10);
+        }
+
+        &--padded {
+            padding-bottom: unquote("min(7.5vw,3.75rem)");
+        }
+    }
+
+    &__sidebar {
+        border-left: 1px solid transparent;
+    }
+
+    @media (max-width: 1240px) {
+        &__main {
+            width: 100%;
+            border-radius: 0 0 10px 10px;
+        }
+
+        &__sidebar{
+            display: none;
+        }
+    }
+}
+
+.theme--dark {
+    .post {
+        &__main {
+            background: $color-blue-gray-950;
+        }
+
+        &__sidebar {
+            border-color: $color-gray-900;
+        }
+    }
+}

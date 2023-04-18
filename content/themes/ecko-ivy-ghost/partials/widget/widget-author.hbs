@@ -1,0 +1,49 @@
+{{! Partial: Widget - Author }}
+
+{{#is "post"}}
+    {{#if post.primary_author}}
+        {{#post.primary_author}}
+            <section class="sidebar__widget widget-author">
+                {{#if profile_image}}
+                    <a href="{{url}}" class="widget-author__anchor">
+                        <picture class="widget-author__avatar">
+                            <img src="{{img_url profile_image size="64"}}" class="widget-author__image" alt="{{name}}" loading="lazy" />
+                        </picture>
+                    </a>
+                {{/if}}
+                <div class="widget-author__title">
+                    <h3 class="widget-author__name">
+                        <a href="{{url}}" class="widget-author__name-anchor">{{name}}</a>
+                    </h3>
+                    {{#if twitter}}
+                        <a href="{{twitter_url}}" rel="noopener noreferrer" target="_blank" class="widget-author__twitter">{{twitter}}</a>
+                    {{/if}}
+                    <div class="widget-author__mark">{{t "Author"}}</div>
+                </div>
+                {{#if bio}}
+                    <p class="widget-author__bio">{{bio}}</p>
+                {{/if}}
+                <div class="widget-author__socials">
+                    {{#if website}}
+                        <a href="{{website}}" class="widget-author__social widget-author__social--website" rel="noopener noreferrer" target="_blank" aria-label="Website">
+                            {{> "svg/external" class="socials__svg"}}
+                        </a>
+                    {{/if}}
+                    {{#if twitter}}
+                        <a href="{{twitter_url}}" class="widget-author__social widget-author__social--twitter" rel="noopener noreferrer" target="_blank" aria-label="Twitter">
+                            {{> "svg/social/twitter" class="socials__svg"}}
+                        </a>
+                    {{/if}}
+                    {{#if facebook}}
+                        <a href="{{facebook_url}}" class="widget-author__social widget-author__social--facebook" rel="noopener noreferrer" target="_blank" aria-label="Facebook">
+                            {{> "svg/social/facebook" class="socials__svg"}}
+                        </a>
+                    {{/if}}
+                    <a href="{{url}}rss/" class="widget-author__social widget-author__social--rss" target="_blank" aria-label="Feed">
+                        {{> "svg/rss" class="socials__svg"}}
+                    </a>
+                </div>
+            </section>
+        {{/post.primary_author}}
+    {{/if}}
+{{/is}}

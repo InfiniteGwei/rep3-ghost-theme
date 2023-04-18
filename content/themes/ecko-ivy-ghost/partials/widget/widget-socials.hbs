@@ -1,0 +1,46 @@
+{{! Partial: Widget - Socials }}
+
+<section class="sidebar__widget widget-socials">
+    <ul class="widget-socials__items">
+        {{#if @site.facebook}}
+            <li class="widget-socials__item widget-socials__item--facebook">
+                <a href="{{facebook_url}}" class="widget-socials__anchor" rel="noopener noreferrer" target="_blank" aria-label="Facebook">
+                    {{> "svg/social/facebook" class="widget-socials__svg"}}
+                </a>
+            </li>
+        {{/if}}
+        {{#if @site.twitter}}
+            <li class="widget-socials__item widget-socials__item--twitter">
+                <a href="{{twitter_url}}" class="widget-socials__anchor" rel="noopener noreferrer" target="_blank" aria-label="Twitter">
+                    {{> "svg/social/twitter" class="widget-socials__svg"}}
+                </a>
+            </li>
+        {{/if}}
+        {{#if @custom.social_linkedin_url}}
+            <li class="widget-socials__item widget-socials__item--linkedin js-soc-linkedin">
+                <a href="{{@custom.social_linkedin_url}}" class="widget-socials__anchor" rel="noopener noreferrer" target="_blank" aria-label="LinkedIn">
+                    {{> "svg/social/linkedin" class="widget-socials__svg"}}
+                </a>
+            </li>
+        {{/if}}
+        {{#if @custom.social_instagram_url}}
+            <li class="widget-socials__item widget-socials__item--instagram js-soc-instagram">
+                <a href="{{@custom.social_instagram_url}}" class="widget-socials__anchor" rel="noopener noreferrer" target="_blank" aria-label="Instagram">
+                    {{> "svg/social/instagram" class="widget-socials__svg"}}
+                </a>
+            </li>
+        {{/if}}
+        {{#if @custom.social_github_url}}
+            <li class="widget-socials__item widget-socials__item--github js-soc-github">
+                <a href="{{@custom.social_github_url}}" class="widget-socials__anchor" rel="noopener noreferrer" target="_blank" aria-label="GitHub">
+                    {{> "svg/social/github" class="widget-socials__svg"}}
+                </a>
+            </li>
+        {{/if}}
+        <li class="widget-socials__item widget-socials__item--rss">
+            <a href="{{@site.url}}/rss/" class="widget-socials__anchor" rel="noopener noreferrer" target="_blank" aria-label="Feed">
+                {{> "svg/rss" class="widget-socials__svg"}}
+            </a>
+        </li>
+    </ul>
+</section>

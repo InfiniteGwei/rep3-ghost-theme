@@ -1,0 +1,72 @@
+
+<article class="card-conversations {{#has tag="#ivy-theme-dark"}}card-conversations--theme-dark{{/has}} {{#if class}}{{class}}{{/if}}">
+
+
+    {{#if feature_image}}
+        {{#if featured}}
+            <img
+                class="post-image u-object-fit"
+                src="{{img_url feature_image}}"
+                alt="{{title}}"
+                loading="lazy"
+            >
+        {{else}}
+        <figure class="post-media">
+            <div class="u-placeholder same-height rectangle">
+                <img
+                    class="post-image u-object-fit"
+                    srcset="{{img_url feature_image size="s"}} 400w,
+                            {{img_url feature_image size="m"}} 750w,
+                            {{img_url feature_image size="l"}} 960w,
+                            {{img_url feature_image size="xl"}} 1140w,
+                            {{img_url feature_image size="xxl"}} 1920w"
+                    sizes="600px"
+                    src="{{img_url feature_image size="l"}}"
+                    alt="{{title}}"
+                    loading="lazy"
+                >
+            </div>
+        </figure>
+        {{/if}}
+    {{/if}}
+
+    {{!-- {{#if feature_image}}
+        <a href="{{url}}" class="card__header" tabindex="-1">
+            <div class="card__header-gradient"></div>
+            <picture class="card__header-background">
+                <img src="{{img_url feature_image size="800"}}" class="card__header-image" alt="{{title}}" loading="lazy" />
+            </picture>
+        </a>
+    {{/if}} --}}
+
+    <div class="card-conversations__inner">
+        <div class="post-wrapper">
+            <h2 class="card-conversations__title">
+                <a href="{{url}}" class="card-conversations__title-anchor">{{title}}</a>
+            </h2>
+
+            <div class="card-conversations__date">
+                <a href="{{url}}" class="card-conversations__anchor">
+                    <time datetime="{{date format="YYYY-MM-DD"}}">{{date format="Do MMMM YYYY"}}</time>
+                </a>
+            </div>
+            <hr class="card-conversations__divider"/>
+            {{#if excerpt}}
+                <p class="card-conversations__excerpt">
+                    {{#if custom_excerpt}}
+                        {{custom_excerpt}}
+
+                    {{else}}
+                            {{excerpt words="20"}}...
+                    {{/if}}
+                </p>
+            {{/if}}
+        </div>
+
+        <a class="post-link" href="{{url}}">
+            <footer class="post-footer">
+            <span class="post-more">Read More</span>
+            </footer>
+        </a>
+    </div>
+</article>

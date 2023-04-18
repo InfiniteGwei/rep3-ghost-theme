@@ -1,0 +1,40 @@
+/**
+ *   Content - Element - Block - Pre
+ */
+
+& > pre {
+    margin: $content_spacing_medium 0;
+}
+
+pre {
+    font-family: var(--font-code);
+    font-size: pxtorem(16);
+    -webkit-font-smoothing: auto;
+    padding: calc(#{ $content_spacing_medium } - #{ pxtorem(5) }) $content_spacing_medium;
+    background: $color-blue-gray-950;
+    color: $color-white;
+    border: 1px solid transparent;
+    border-radius: 10px;
+    line-height: pxtorem(34);
+    letter-spacing: 0;
+    tab-size: 4;
+    overflow: auto;
+
+    code {
+        background: transparent;
+        font-size: pxtorem(16);
+        margin: 0;
+        padding: 0;
+        border-radius: 0;
+    }
+}
+
+@at-root .theme--dark .post-content {
+    pre {
+        border-color: $color-gray-800;
+
+        code {
+            background-color: transparent;
+        }
+    }
+}

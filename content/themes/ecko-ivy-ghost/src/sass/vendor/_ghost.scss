@@ -1,0 +1,11 @@
+/*------------------------------------------------------------------
+    Vendor: Ghost
+-------------------------------------------------------------------*/
+
+.gh-portal-triggerbtn-iframe {
+    transition: transform 0.4s cubic-bezier(0, 0.55, 0.45, 1), opacity 0.3s ease 0s !important;
+
+    &--shift-left {
+        transform: translateX(pxtorem(-455));
+    }
+}

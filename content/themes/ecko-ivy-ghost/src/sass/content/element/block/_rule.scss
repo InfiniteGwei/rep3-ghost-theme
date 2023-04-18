@@ -1,0 +1,17 @@
+/**
+ *   Content - Element - Block - Rule
+ */
+
+hr {
+    margin: $content_spacing_medium auto;
+    height: 1px;
+    border: 0;
+    background: $color-gray-200;
+    width: 100%;
+}
+
+@at-root .theme--dark .post-content {
+    hr {
+        background: $color-gray-700;
+    }
+}

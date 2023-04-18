@@ -1,0 +1,40 @@
+/**
+ *   Content - Element - Block - Form
+ */
+
+& > form {
+    margin: $content_spacing_medium  0;
+}
+
+form {
+    p {
+        margin: $content_spacing_small 0;
+    }
+
+    & > *:first-child {
+        margin-top: 0;
+    }
+
+    & > *:last-child {
+        margin-bottom: 0;
+    }
+}
+
+fieldset {
+    border: 1px solid $color-gray-200;
+    padding: $content_spacing_tiny;
+
+    legend {
+        padding-left: calc(#{ $content_spacing_tiny } / 2);
+        padding-right: calc(#{ $content_spacing_tiny } / 2);
+    }
+
+    & > *:first-child,
+    & > legend + * {
+        margin-top: 0;
+    }
+
+    & > *:last-child {
+        margin-bottom: 0;
+    }
+}

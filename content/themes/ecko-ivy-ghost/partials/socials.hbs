@@ -1,0 +1,46 @@
+{{! Partial: socs }}
+
+<section class="socs">
+    <ul class="socs__items">
+        {{#if @site.facebook}}
+            <li class="socs__item socs__item--facebook">
+                <a href="{{facebook_url}}" class="socs__anchor" rel="noopener noreferrer" target="_blank" aria-label="Facebook">
+                    {{> "svg/social/facebook" class="socs__svg"}}
+                </a>
+            </li>
+        {{/if}}
+        {{#if @site.twitter}}
+            <li class="socs__item socs__item--twitter">
+                <a href="{{twitter_url}}" class="socs__anchor" rel="noopener noreferrer" target="_blank" aria-label="Twitter">
+                    {{> "svg/social/twitter" class="socs__svg"}}
+                </a>
+            </li>
+        {{/if}}
+        {{#if @custom.social_linkedin_url}}
+            <li class="socs__item socs__item--linkedin js-soc-linkedin">
+                <a href="{{@custom.social_linkedin_url}}" class="socs__anchor" rel="noopener noreferrer" target="_blank" aria-label="LinkedIn">
+                    {{> "svg/social/linkedin" class="socs__svg"}}
+                </a>
+            </li>
+        {{/if}}
+        {{#if @custom.social_instagram_url}}
+            <li class="socs__item socs__item--instagram js-soc-instagram">
+                <a href="{{@custom.social_instagram_url}}" class="socs__anchor" rel="noopener noreferrer" target="_blank" aria-label="Instagram">
+                    {{> "svg/social/instagram" class="socs__svg"}}
+                </a>
+            </li>
+        {{/if}}
+        {{#if @custom.social_github_url}}
+            <li class="socs__item socs__item--github js-soc-github">
+                <a href="{{@custom.social_github_url}}" class="socs__anchor" rel="noopener noreferrer" target="_blank" aria-label="GitHub">
+                    {{> "svg/social/github" class="socs__svg"}}
+                </a>
+            </li>
+        {{/if}}
+        <li class="socs__item socs__item--rss">
+            <a href="{{@site.url}}/rss/" class="socs__anchor" rel="noopener noreferrer" target="_blank" aria-label="Feed">
+                {{> "svg/rss" class="socs__svg"}}
+            </a>
+        </li>
+    </ul>
+</section>

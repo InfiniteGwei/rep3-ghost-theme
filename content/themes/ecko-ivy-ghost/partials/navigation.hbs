@@ -1,0 +1,23 @@
+{{! Partial: Navigation }}
+
+{{#if isSecondary}}
+    <nav class="nav-secondary">
+        <ul class="nav-secondary__items" role="menu">
+            {{#foreach navigation}}
+                <li class="nav-secondary__item nav-secondary__item--{{slug}}" role="none">
+                    <a href="{{url absolute="true"}}" class="nav-secondary__anchor" role="menuitem">{{label}}</a>
+                </li>
+            {{/foreach}}
+        </ul>
+    </nav>
+{{else}}
+    <nav class="nav-primary">
+        <ul class="nav-primary__items" role="menu">
+            {{#foreach navigation}}
+                <li class="nav-primary__item nav-primary__item--{{slug}}" role="none">
+                    <a href="{{url absolute="true"}}" class="nav-primary__anchor {{#if current}}nav-primary__anchor--active{{/if}}" role="menuitem">{{label}}</a>
+                </li>
+            {{/foreach}}
+        </ul>
+    </nav>
+{{/if}}

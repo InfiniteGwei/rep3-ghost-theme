@@ -1,0 +1,22 @@
+{{! Partial: Content - CTA }}
+
+{{{html}}}
+
+<section class="content-cta">
+    {{#has visibility="members"}}
+        <h2 class="content-cta__header">{{t "Subscribers only"}}</h2>
+        <p class="content-cta__description">{{t "You don't have access to this post on {blogtitle} at the moment, but if you subscribe you'll be able to see the whole thing, as well as all the other posts in the archive!" blogtitle=@site.title}}</p>
+        <a class="content-cta__button" href="#/portal/signup">{{t "Become a Subscriber"}}</a>
+        <a href="#/portal/signin" class="content-cta__signin">{{t "Already have an account?"}} {{t "Sign In"}}.</a>
+    {{/has}}
+    {{#has visibility="paid"}}
+        <h2 class="content-cta__header">{{t "Members only"}}</h2>
+        {{#if @member}}
+            <p class="content-cta__description">{{t "You don't have access to this post on {blogtitle} at the moment, but if you upgrade your account you'll be able to see the whole thing, as well as all the other posts in the archive!" blogtitle=@site.title}}</p>
+        {{else}}
+            <p class="content-cta__description">{{t "You don't have access to this post on {blogtitle} at the moment, but if you become a member you'll be able to see the whole thing, as well as all the other posts in the archive!" blogtitle=@site.title}}</p>
+        {{/if}}
+        <a class="content-cta__button" href="#/portal/signup">{{t "Become a Member"}}</a>
+        <a href="#/portal/signin" class="content-cta__signin">{{t "Already have an account?"}} {{t "Sign In"}}.</a>
+    {{/has}}
+</section>

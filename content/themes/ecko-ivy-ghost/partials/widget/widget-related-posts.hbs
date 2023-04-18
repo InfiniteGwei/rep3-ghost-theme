@@ -1,0 +1,33 @@
+{{! Partial: Widget - Related Posts }}
+
+{{#is "post"}}
+    {{#get "posts" limit="3" filter="tags:[{{post.tags}}]+id:-{{post.id}}+feature_image:-null" include="tags,authors"}}
+        {{#if posts}}
+            <section class="sidebar__widget widget-related-posts">
+                {{#foreach posts}}
+                    <div class="widget-related-posts__post">
+                        <a href="{{url}}" class="widget-related-posts__featured">
+                            <div class="widget-related-posts__mark">{{t "Related"}}</div>
+                            <picture class="widget-related-posts__background">
+                                <img src="{{img_url feature_image size="480"}}" class="widget-related-posts__background-image" alt="{{title}}" loading="lazy" />
+                            </picture>
+                        </a>
+                        <h3 class="widget-related-posts__title">
+                            <a href="{{url}}" class="widget-related-posts__title-anchor">{{title}}</a>
+                        </h3>
+                        <div class="widget-related-posts__metas">
+                            <div class="widget-related-posts__meta widget-related-posts__meta--tag">
+                                <a href="{{primary_tag.url}}" class="widget-related-posts__anchor">{{primary_tag.name}}</a>
+                            </div>
+                            <div class="widget-related-posts__meta widget-related-posts__meta--date">
+                                <a href="{{url}}" class="widget-related-posts__anchor">
+                                    <time datetime="{{date format="YYYY-MM-DD"}}">{{date format="Do MMMM YYYY"}}</time>
+                                </a>
+                            </div>
+                        </div>
+                    </div>
+                {{/foreach}}
+            </section>
+        {{/if}}
+    {{/get}}
+{{/is}}

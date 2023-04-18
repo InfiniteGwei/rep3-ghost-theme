@@ -1,0 +1,28 @@
+/*------------------------------------------------------------------
+    Component: Widget - Tag Cloud
+-------------------------------------------------------------------*/
+
+.widget-tag-cloud {
+    &__tags {
+        display: flex;
+        flex-wrap: wrap;
+        margin: 0 pxtorem(-15) pxtorem(-15) 0;
+    }
+
+    &__tag {
+        display: block;
+        margin: 0 pxtorem(15) pxtorem(15) 0;
+        padding: pxtorem(17) pxtorem(20);
+        border-radius: 10px;
+        background: $color-gray-800;
+        color: $color-gray-100;
+        font-weight: 700;
+        font-size: pxtorem(14);
+
+        &:focus,
+        &:hover {
+            background: var(--color-accent);
+            color: $color-white;
+        }
+    }
+}

@@ -1,0 +1,70 @@
+/*------------------------------------------------------------------
+    Base: Form
+-------------------------------------------------------------------*/
+
+form {
+    width: 100%;
+}
+
+input,
+textarea,
+select {
+    width: 100%;
+    padding: pxtorem(26) pxtorem(31);
+    border: 1px solid $color-cool-gray-200;
+    border-radius: 10px;
+    color: $color-gray-700;
+    font-size: pxtorem(15);
+    line-height: normal;
+    letter-spacing: pxtorem(0.2);
+    transition: border-color 0.25s ease-out;
+
+    &:focus,
+    &:focus:hover {
+        border-color: $color-cool-gray-300;
+        outline: none;
+    }
+
+    &:hover {
+        border-color: $color-cool-gray-300;
+    }
+}
+
+input[type=text],
+input[type=email] {
+    appearance: none;
+}
+
+select {
+    background-color: $color-white;
+    background-image: url('data:image/svg+xml,%3Csvg height="7" viewBox="0 0 13 7" width="13" xmlns="http://www.w3.org/2000/svg"%3E%3Cpath d="m6.5 7-6.5-7h13z"/%3E%3C/svg%3E');
+    background-position: right 2rem top 50%;
+    background-size: 0.7rem auto;
+    background-repeat: no-repeat;
+    appearance: none;
+}
+
+button {
+    border: 0;
+    line-height: 1;
+    cursor: pointer;
+}
+
+::placeholder {
+    color: $color-gray-700;
+    opacity: 1;
+}
+
+:-webkit-autofill,
+:-webkit-autofill:hover,
+:-webkit-autofill:focus,
+:-webkit-autofill::first-line {
+    border: 0;
+    color: $color-gray-700;
+    -webkit-box-shadow: 0 0 0 1000px $color-white inset !important;
+    font-size: pxtorem(15) !important;
+    font-family: var(--font-body) !important;
+    letter-spacing: pxtorem(0.2);
+    transition: background-color 5000s ease-in-out 0s;
+    -webkit-text-fill-color: 0;
+}

@@ -1,0 +1,63 @@
+/**
+ *   Post Content
+ */
+
+@import 'vars';
+
+.post-content {
+    position: relative;
+    font-family: var(--font-body);
+    font-size: $content_font_size_base;
+    font-weight: 450;
+    line-height: $content_line_height_base;
+    letter-spacing: pxtorem(0.2);
+    color: $color-gray-600;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+
+    & > *:first-child {
+        margin-top: 0;
+    }
+
+    & > *:last-child {
+        margin-bottom: 0;
+    }
+
+    /* Element - Block */
+    @import 'element/block/paragraph';
+    @import 'element/block/heading';
+    @import 'element/block/figure';
+    @import 'element/block/div';
+    @import 'element/block/pre';
+    @import 'element/block/list';
+    @import 'element/block/quote';
+    @import 'element/block/definition';
+    @import 'element/block/details';
+    @import 'element/block/table';
+    @import 'element/block/rule';
+    @import 'element/block/form';
+
+    /* Element - Inline */
+    @import 'element/inline/image';
+    @import 'element/inline/anchor';
+    @import 'element/inline/strong';
+    @import 'element/inline/code';
+    @import 'element/inline/mark';
+    @import 'element/inline/input';
+    @import 'element/inline/button';
+
+    /* Koenig */
+    @import 'koenig/bookmark';
+    @import 'koenig/gallery';
+    @import 'koenig/embed';
+
+    /* Alignment */
+    @import 'alignment/wide';
+    @import 'alignment/full';
+}
+
+.theme--dark {
+    .post-content {
+        color: $color-gray-300;
+    }
+}

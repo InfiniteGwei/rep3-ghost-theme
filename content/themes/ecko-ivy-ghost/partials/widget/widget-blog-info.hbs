@@ -1,0 +1,23 @@
+{{! Partial: Widget - Blog Info }}
+
+<section class="sidebar__widget widget-blog-info">
+    <div class="widget-blog-info__title">
+        {{#unless disableMenu}}
+            {{> "menu" class="widget-blog-info__menu menu--row menu--light menu--small"}}
+        {{/unless}}
+        {{#if @site.logo}}
+            <h2 class="widget-blog-info__header">
+                <a href="{{@site.url}}" class="widget-blog-info__anchor">
+                    <img src="{{@site.logo}}" class="widget-blog-info__image" alt="{{@site.title}}" loading="lazy" />
+                </a>
+            </h2>
+        {{else}}
+            <h2 class="widget-blog-info__header">
+                <a href="{{@site.url}}" class="widget-blog-info__anchor">{{@site.title}}</a>
+            </h2>
+        {{/if}}
+    </div>
+    <p class="widget-blog-info__description">
+        {{@site.description}}
+    </p>
+</section>

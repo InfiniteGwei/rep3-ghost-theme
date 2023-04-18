@@ -1,0 +1,15 @@
+/**
+ *   Content - Koenig - Embed
+ */
+
+.kg-embed-card {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    width: 100%;
+    max-width: 910px;
+
+    iframe {
+        display: block;
+    }
+}

@@ -1,0 +1,47 @@
+{{! Partial: Widget - Share }}
+
+{{#is "post,page"}}
+    {{#post}}
+        <section class="sidebar__widget widget-shre">
+            <h3 class="widget-shre__title">{{t "Share Article"}}</h3>
+            <ul class="widget-shre__items">
+                <li class="widget-shre__item">
+                    <a href="#" data-location="https://twitter.com/share?text={{encode title}}&amp;url={{url absolute="true"}}" onclick="window.open(this.dataset.location, '_blank'); return false;" class="widget-shre__item widget-shre__item--twitter">
+                        {{> "svg/social/twitter" class="widget-shre__svg"}}
+                        <span class="widget-shre__label">Twitter</span>
+                    </a>
+                </li>
+                <li class="widget-shre__item">
+                    <a href="#" data-location="https://www.facebook.com/sharer/sharer.php?u={{url absolute="true"}}" onclick="window.open(this.dataset.location, '_blank'); return false;" class="widget-shre__item widget-shre__item--facebook">
+                        {{> "svg/social/facebook" class="widget-shre__svg"}}
+                        <span class="widget-shre__label">Facebook</span>
+                    </a>
+                </li>
+                <li class="widget-shre__item">
+                    <a href="#" data-location="https://pinterest.com/pin/create/button/?url={{url absolute="true"}}&description={{encode title}}" onclick="window.open(this.dataset.location, '_blank'); return false;" class="widget-shre__item widget-shre__item--pinterest">
+                        {{> "svg/social/pinterest" class="widget-shre__svg"}}
+                        <span class="widget-shre__label">Pinterest</span>
+                    </a>
+                </li>
+                <li class="widget-shre__item">
+                    <a href="#" data-location="http://www.reddit.com/submit?url={{url absolute="true"}}&title={{encode title}}" onclick="window.open(this.dataset.location, '_blank'); return false;" class="widget-shre__item widget-shre__item--reddit">
+                        {{> "svg/social/reddit" class="widget-shre__svg"}}
+                        <span class="widget-shre__label">Reddit</span>
+                    </a>
+                </li>
+                <li class="widget-shre__item">
+                    <a href="#" data-location="https://www.linkedin.com/shareArticle?mini=true&amp;url={{url absolute="true"}}&amp;title={{encode title}}" onclick="window.open(this.dataset.location, '_blank'); return false;" class="widget-shre__item widget-shre__item--linkedin">
+                        {{> "svg/social/linkedin" class="widget-shre__svg"}}
+                        <span class="widget-shre__label">LinkedIn</span>
+                    </a>
+                </li>
+                <li class="widget-shre__item">
+                    <a href="mailto:?subject={{encode title}}&body={{url absolute="true"}}" class="widget-shre__item widget-shre__item--email">
+                        {{> "svg/mail" class="widget-shre__svg"}}
+                        <span class="widget-shre__label">{{t "Email"}}</span>
+                    </a>
+                </li>
+            </ul>
+        </section>
+    {{/post}}
+{{/is}}

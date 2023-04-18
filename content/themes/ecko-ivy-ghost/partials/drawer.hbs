@@ -1,0 +1,24 @@
+{{! Partial: Drawer }}
+
+<div class="drawer">
+    <button class="drawer__close js-drawer-close">
+        {{> "svg/x" class="drawer__icon drawer__icon--x"}}
+    </button>
+    <div class="drawer__overlay js-drawer-close"></div>
+    <aside class="drawer__sidebar sidebar sidebar--scroll">
+        {{! Customize the order or remove widget entries below }}
+        {{!-- {{> "widget/widget-blog-info" disableMenu="true"}} --}}
+        
+        {{!-- {{> "widget/widget-author"}} --}}
+        {{!-- {{> "widget/widget-search"}} --}}
+        {{> "widget/widget-navigation"}}
+        {{!-- {{> "widget/widget-tag-cloud"}} --}}
+        {{!-- {{> "widget/widget-feature"}} --}}
+        {{> "widget/widget-subscribe"}}
+        {{> "widget/widget-socials"}}
+        {{!-- {{> "widget/widget-related-posts"}} --}}
+        {{!-- {{> "widget/widget-advertisment"}} --}}
+        {{!-- {{> "widget/widget-share"}} --}}
+        {{! Do not edit below this line }}
+    </aside>
+</div>

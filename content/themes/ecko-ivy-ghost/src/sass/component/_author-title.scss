@@ -1,0 +1,66 @@
+/*------------------------------------------------------------------
+    Component: Author Title
+-------------------------------------------------------------------*/
+
+.author-title {
+    &__upper {
+        display: flex;
+        align-items: center;
+    }
+
+    &__profile {
+        display: block;
+        margin-right: pxtorem(25);
+        width: pxtorem(64);
+        height: pxtorem(64);
+        border-radius: 120px;
+        overflow: hidden;
+    }
+
+    &__profile-image {
+        width: 100%;
+        height: 100%;
+        object-fit: cover;
+        object-position: center;
+    }
+
+    &__header {
+        color: $color-white;
+        font-weight: 500;
+        font-size: pxtorem(32);
+        line-height: 1.26;
+        margin: 0;
+    }
+
+    &__description {
+        margin: pxtorem(20) 0 0;
+        color: $color-gray-300;
+        font-size: pxtorem(21);
+        line-height: 1.9;
+        letter-spacing: pxtorem(0.2);
+        font-weight: 450;
+    }
+
+    &__socials {
+        display: flex;
+        margin: pxtorem(15) pxtorem(-5) pxtorem(-10) pxtorem(-10);
+    }
+
+    &__social {
+        display: inline-block;
+        margin-right: pxtorem(5);
+        padding: pxtorem(10);
+        color: $color-gray-300;
+
+        &:focus,
+        &:hover {
+            color: var(--color-accent);
+        }
+    }
+
+    @media (max-width: 860px) {
+        &__description {
+            font-size: pxtorem(19);
+        }
+    }
+}

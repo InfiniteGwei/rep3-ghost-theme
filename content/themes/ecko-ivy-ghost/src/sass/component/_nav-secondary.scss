@@ -1,0 +1,60 @@
+/*------------------------------------------------------------------
+    Component: Nav - Secondary
+-------------------------------------------------------------------*/
+
+.nav-secondary {
+    display: flex;
+
+    &__items {
+        display: flex;
+        flex-wrap: wrap;
+        justify-content: center;
+        margin: 0;
+        padding: 0;
+        list-style: none;
+    }
+
+    &__item {
+        font-size: pxtorem(15);
+
+        &:before {
+            content: "  ";
+            display: inline-block;
+            vertical-align: middle;
+            margin: 0 0.5ch 0 1ch;
+            font-size: pxtorem(18);
+        }
+
+        &:first-child:before {
+            content: none;
+        }
+    }
+
+    &__anchor {
+        color: #000000;
+
+        &:focus,
+        &:hover {
+            color: $color-gray-50;
+        }
+    }
+
+    @media (max-width: 860px) {
+        &__items {
+            flex-direction: column;
+            align-items: center;
+        }
+
+        &__item {
+            margin-bottom: pxtorem(10);
+
+            &:before {
+                display: none;
+            }
+
+            &:last-of-type {
+                margin-bottom: 0;
+            }
+        }
+    }
+}

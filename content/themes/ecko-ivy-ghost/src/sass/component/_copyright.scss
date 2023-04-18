@@ -1,0 +1,26 @@
+/*------------------------------------------------------------------
+    Component: Copyright
+-------------------------------------------------------------------*/
+
+.copyright {
+    display: flex;
+    flex-direction: column;
+    font-size: pxtorem(16);
+    line-height: 1.5;
+    text-align: center;
+
+    &__disclaimer {
+        //color: $color-gray-300;
+    }
+
+    &__rights {
+        //margin-top: pxtorem(12);
+        color: $color-gray-400;
+    }
+
+    @media (max-width: 480px) {
+        &__published {
+            display: block;
+        }
+    }
+}

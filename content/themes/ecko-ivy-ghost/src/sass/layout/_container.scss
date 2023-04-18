@@ -1,0 +1,24 @@
+/*------------------------------------------------------------------
+    Layout: Container
+-------------------------------------------------------------------*/
+
+.container {
+    width: 100vw;
+    display: flex;
+    justify-content: center;
+    transition: transform 0.4s cubic-bezier(0, 0.55, 0.45, 1);
+
+    &--shift-left {
+        transform: translateX(pxtorem(-455));
+    }
+
+    &--right {
+        position: fixed;
+        right: 0;
+    }
+
+    &__inner {
+        width: 80vw;
+        max-width: pxtorem(1485);
+    }
+}

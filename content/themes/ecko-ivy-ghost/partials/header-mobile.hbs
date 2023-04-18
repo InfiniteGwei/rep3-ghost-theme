@@ -1,0 +1,18 @@
+{{! Partial: Header Mobile }}
+
+<section class="header-mobile">
+    <section class="header-mobile__logo logo">
+        <h1 class="logo__title">
+            {{#if @site.logo}}
+                <a href="{{@site.url}}" class="logo__anchor">
+                    <img src="{{@site.logo}}" class="logo__image" alt="{{@site.title}}" loading="lazy" />
+                </a>
+            {{else}}
+                <span class="logo__header">
+                    <a href="{{@site.url}}" class="blog-info__anchor">{{@site.title}}</a>
+                </span>
+            {{/if}}
+        </h1>
+    </section>
+    {{> "menu" class="header__menu menu--row menu--light menu--small"}}
+</section>

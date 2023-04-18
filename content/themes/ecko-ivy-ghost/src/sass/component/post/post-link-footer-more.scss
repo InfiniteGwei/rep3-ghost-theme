@@ -1,0 +1,121 @@
+/*------------------------------------------------------------------
+    Component: Post - Footer and Link
+-------------------------------------------------------------------*/
+
+.post-link {
+    display: flex;
+    flex-direction: column;
+    height: 100%;
+}
+
+.post-more {
+    font-size: 1.1rem;
+    font-weight: 700;
+    line-height: 1;
+    text-transform: uppercase;
+    letter-spacing: 0.005em;
+}
+
+.post-footer {
+    
+    //the following chunk is from Ruby, our current theme
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    height: 42px;
+    padding: 0 20px;
+    background-color: var(--white-color);
+    border-top: 1px solid var(--light-gray-color);
+    
+    
+    //padding: unquote("min(7.5vw, #{pxtorem(60)})");
+
+    &:before {
+        content: '';
+        margin-bottom: unquote("min(7.5vw, #{pxtorem(60)})");
+        display: block;
+        border-top: 1px solid $color-gray-200;
+    }
+
+    &__authors {
+        font-size: pxtorem(16);
+        line-height: 1.5;
+        margin-bottom: unquote("min(7.5vw, #{pxtorem(60)})");
+        color: $color-gray-600;
+    }
+
+    &__tags {
+        padding: 0;
+        list-style: none;
+        display: flex;
+        flex-wrap: wrap;
+        margin: unquote("min(7.5vw, #{pxtorem(45)})") 0 pxtorem(-15);
+    }
+
+    &__tag {
+        font-weight: 600;
+        font-size: pxtorem(14);
+        color: $color-gray-700;
+        background: $color-gray-100;
+        border-radius: 10px;
+        margin: 0 pxtorem(15) pxtorem(15) 0;
+        transition: background 0.25s ease-out;
+
+        &:focus,
+        &:hover {
+            background: $color-gray-200;
+        }
+
+        &:last-of-type {
+            margin-right: 0;
+        }
+
+        &--category {
+            background: var(--color-accent);
+            color: $color-white;
+            font-weight: 600;
+
+            &:focus,
+            &:hover {
+                background: var(--color-accent-dark);
+            }
+        }
+    }
+
+    &__tag-anchor {
+        display: block;
+        padding: pxtorem(18) pxtorem(22);
+    }
+}
+
+.theme--dark {
+    .post-footer {
+        &:before {
+            border-color: $color-gray-700;
+        }
+
+        &__authors {
+            color: $color-gray-300;
+        }
+
+        &__tag {
+            background: $color-gray-800;
+            color: $color-white;
+
+            &:focus,
+            &:hover {
+                background: $color-gray-700;
+            }
+
+            &--category {
+                background: var(--color-accent);
+                color: $color-white;
+
+                &:focus,
+                &:hover {
+                    background: var(--color-accent-dark);
+                }
+            }
+        }
+    }
+}

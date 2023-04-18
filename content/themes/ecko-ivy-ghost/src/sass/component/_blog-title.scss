@@ -1,0 +1,49 @@
+/*------------------------------------------------------------------
+    Component: Blog Title
+-------------------------------------------------------------------*/
+
+.blog-title {
+    &__anchor {
+        display: block;
+        color: black;
+        font-size: 2.75rem;
+        letter-spacing: -0.06em;
+        font-family: 'Matter-SemiBold';
+    }
+
+    &__image {
+        display: block;
+        max-width: 100%;
+        max-height: pxtorem(70);
+    }
+
+    &__header {
+        margin: 0 0 pxtorem(40);
+        width: max-content;
+    }
+
+    &__label {
+        color: $color-white;
+        font-weight: 600;
+        font-size: pxtorem(42);
+        line-height: 1.14;
+        margin: 0;
+    }
+
+    &__description {
+        margin: 0;
+        color: #00BB00;
+        font-size: 2rem;
+        //font-size: pxtorem(22);
+        letter-spacing: -0.06em;
+        font-family: 'Matter-SemiBold';
+        //line-height: 1.9;
+        //letter-spacing: pxtorem(0.2);
+    }
+
+    @media (max-width: 860px) {
+        &__description {
+            font-size: pxtorem(19);
+        }
+    }
+}

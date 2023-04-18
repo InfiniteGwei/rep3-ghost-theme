@@ -1,0 +1,23 @@
+/*------------------------------------------------------------------
+    Component: Logo
+-------------------------------------------------------------------*/
+
+.logo {
+    &__anchor {
+        display: block;
+    }
+
+    &__image {
+        display: block;
+        max-width: 100%;
+        max-height: pxtorem(35);
+    }
+
+    &__title {
+        margin: 0;
+        font-weight: 600;
+        font-size: pxtorem(28);
+        line-height: 1;
+        color: $color-white;
+    }
+}

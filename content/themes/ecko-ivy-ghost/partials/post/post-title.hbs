@@ -1,0 +1,54 @@
+{{! Partial: Post - Title }}
+
+<section class="post-title">
+    {{#if feature_image}}
+        <picture class="post-title__feature">
+            <img src="{{img_url feature_image size="1120"}}" class="post-title__feature-image" alt="{{title}}" loading="lazy">
+        </picture>
+    {{/if}}
+    <div class="post-title__info">
+
+        {{!-- We won't have paid members ever, so removing this! --}}
+        {{!-- {{#has visibility="paid"}}
+            <div class="post-title__premium {{#if feature_image}}post-title__premium--absolute{{/if}}">{{t "Premium"}}</div>
+        {{/has}} --}}
+
+        {{!-- Removed tags. --}}
+        {{!-- {{#if primary_tag}}
+            <a href="{{primary_tag.url}}" class="post-title__category">{{primary_tag.name}}</a>
+        {{/if}} --}}
+
+        <h1 class="post-title__header">{{title}}</h1>
+        {{#is "post"}}
+            <ul class="post-title__meta">
+
+                {{!-- Removed the author details, since all posts are made by infi anyway --}}
+                {{!-- <li class="post-title__meta-item post-title__meta-item--author">
+                    <a href="{{primary_author.url}}" class="post-title__author">
+                        {{#if primary_author.profile_image}}
+                            <picture class="post-title__avatar">
+                                <img src="{{img_url primary_author.profile_image size="32"}}" class="post-title__avatar-image" alt="{{primary_author.name}}" loading="lazy" />
+                            </picture>
+                        {{/if}}
+                        <span class="post-title__label">{{primary_author.name}}</span>
+                    </a>
+                </li> --}}
+
+                <li class="post-title__meta-item post-title__meta-item--date">
+                    <a href="{{url}}" class="post-title__date">
+                        <time datetime="{{date format="YYYY-MM-DD"}}">{{date format="Do MMMM YYYY"}}</time>
+                    </a>
+                </li>
+
+                <li class="post-title__meta-item post-title__meta-item--read-time">
+                    <div class="post-title__read-time">
+                        {{reading_time}}
+                    </div>
+                </li>
+
+            </ul>
+        {{/is}}
+
+        <div class="post-title__divider"></div>
+    </div>
+</section>

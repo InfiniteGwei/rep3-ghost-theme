@@ -1,0 +1,28 @@
+/*------------------------------------------------------------------
+    Components: Widget - Search
+-------------------------------------------------------------------*/
+
+.widget-search {
+    &__form {
+        position: relative;
+        height: pxtorem(72);
+        display: flex;
+        background: #fff;
+        border-radius: 10px;
+        align-items: center;
+        padding: 0 pxtorem(25);
+    }
+
+    &__input {
+        border: 0;
+        font-size: pxtorem(15);
+        font-weight: 600;
+        letter-spacing: pxtorem(0.2);
+        color: $color-gray-700;
+    }
+
+    &__button {
+        width: pxtorem(40);
+        color: $color-gray-400;
+    }
+}

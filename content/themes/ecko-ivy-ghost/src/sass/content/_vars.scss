@@ -1,0 +1,33 @@
+/**
+ *   Content - Vars
+ */
+
+$content_container_width: 910px;
+$content_container_padding: 10%;
+
+$content_font_size_base: pxtorem(18);
+$content_line_height_base: 1;
+
+$content_spacing_huge: pxtorem(60);
+$content_spacing_large: pxtorem(40);
+$content_spacing_medium: pxtorem(30);
+$content_spacing_base: pxtorem(20);
+$content_spacing_small: pxtorem(10);
+$content_spacing_tiny: pxtorem(5);
+
+// $content_spacing_huge: unquote("min(9vw, #{pxtorem(80)})");
+// $content_spacing_large: unquote("min(8.25vw, #{pxtorem(70)})");
+// $content_spacing_medium: unquote("min(7.5vw, #{pxtorem(60)})");
+// $content_spacing_base: unquote("min(5vw, #{pxtorem(40)})");
+// $content_spacing_small: unquote("min(3.75vw, #{pxtorem(30)})");
+// $content_spacing_tiny: unquote("min(2.5vw, #{pxtorem(20)})");
+
+
+
+$content_breakpoint_content_wide_large: $content_container_width + ($content_container_width * 0.4);
+$content_breakpoint_content_wide: $content_container_width + ($content_container_width * 0.25);
+$content_breakpoint_content: $content_container_width + ($content_container_width * (math.div($content_container_padding, 100%) * 2.4));
+$content_breakpoint_alignment: $content_breakpoint_content;
+$content_breakpoint_tablet: 780px;
+$content_breakpoint_mobile_large: 540px;
+$content_breakpoint_mobile_small: 420px;

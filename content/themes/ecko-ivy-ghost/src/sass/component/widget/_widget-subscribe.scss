@@ -1,0 +1,87 @@
+/*------------------------------------------------------------------
+    Component: Widget - Subscribe
+-------------------------------------------------------------------*/
+
+.widget-sub {
+    $self: &;
+
+    &__title {
+        margin: 0 0 pxtorem(20);
+        color: $color-white;
+        font-weight: 500;
+        font-size: pxtorem(22);
+    }
+
+    &__excerpt {
+        margin: 0;
+        color: $color-gray-300;
+        font-size: pxtorem(17);
+        line-height: pxtorem(32);
+    }
+
+    &__form {
+        position: relative;
+        margin: pxtorem(30) 0 0 0;
+
+        &.success {
+            #{ $self }__message--success {
+                display: block;
+            }
+        }
+
+        &.error {
+            #{ $self }__message--error {
+                display: block;
+            }
+        }
+    }
+
+    &__key {
+        position: absolute;
+        top: pxtorem(-20);
+        color: transparent;
+        user-select: none;
+    }
+
+    &__input {
+        height: pxtorem(72);
+        padding: 0 pxtorem(25);
+        border: 0;
+        font-size: pxtorem(15);
+        font-weight: 500;
+        letter-spacing: pxtorem(0.2);
+        transition: box-shadow 0.25s ease-out;
+
+        &:focus {
+            box-shadow: 0 0 0 pxtorem(5) rgba($color-gray-500, 0.7);
+        }
+    }
+
+    &__button {
+        position: absolute;
+        top: pxtorem(11);
+        right: pxtorem(11);
+        width: pxtorem(50);
+        height: pxtorem(50);
+        border-radius: 10px;
+        background: $color-gray-100;
+        transition: background 0.25s ease-out, box-shadow 0.25s ease-out;
+
+        &:focus,
+        &:active {
+            box-shadow: 0 0 0 4px rgba($color-gray-500, 0.5);
+        }
+
+        &:hover {
+            background: $color-gray-200;
+        }
+    }
+
+    &__message {
+        display: none;
+        margin: pxtorem(20) 0 0;
+        color: $color-gray-300;
+        font-size: pxtorem(16);
+        line-height: 2;
+    }
+}

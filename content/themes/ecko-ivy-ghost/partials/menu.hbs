@@ -1,0 +1,19 @@
+{{! Partial: Menu }}
+
+<section class="menu {{#if class}}{{class}}{{/if}}">
+    <button class="menu__item menu__item--menu js-drawer-toggle" aria-label="{{t "Menu"}}">
+        {{> "svg/menu" class="menu__icon menu__icon--menu"}}
+        {{> "svg/x" class="menu__icon menu__icon--x"}}
+        <span class="menu__tooltip">{{t "Menu"}}</span>
+    </button>
+    {{! Removed the option to switch to dark theme.}}
+    {{!-- <button class="menu__item menu__item--theme js-theme-switch" aria-label="{{t "Theme"}}">
+        {{> "svg/moon" class="menu__icon menu__icon--moon"}}
+        {{> "svg/sun" class="menu__icon menu__icon--sun"}}
+        <span class="menu__tooltip js-theme-label">{{t "Theme"}}</span>
+    </button> --}}
+    <button class="menu__item menu__item--search" aria-label="{{t "Search"}}" data-ghost-search>
+        {{> "svg/search" class="menu__icon"}}
+        <span class="menu__tooltip">{{t "Search"}}</span>
+    </button>
+</section>

@@ -1,0 +1,24 @@
+{{! Template: Page }}
+{{!< default}}
+
+{{> "header-mobile"}}
+
+<section class="post">
+
+    <main class="post__main post__main--padded">
+        {{#post}}
+
+            {{> "post/post-title"}}
+
+            <div class="post-body">
+                <div class="post-content">
+                    {{content}}
+                </div>
+            </div>
+
+        {{/post}}
+    </main>
+
+    {{!-- {{> "sidebar" class="post__sidebar sidebar--static"}} --}}
+
+</section>

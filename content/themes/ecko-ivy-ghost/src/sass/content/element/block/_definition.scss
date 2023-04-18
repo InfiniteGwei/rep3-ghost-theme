@@ -1,0 +1,33 @@
+/**
+ *   Content - Element - Block - Definition
+ */
+
+dl {
+    margin: $content_spacing_medium 0;
+    padding: 0 0 0 $content_spacing_base;
+}
+
+dt {
+    font-family: var(--font-header);
+    font-weight: 500;
+    font-size: pxtorem(18);
+    margin-bottom: $content_spacing_tiny;
+    padding: 0;
+    color: $color-gray-900;
+}
+
+dd {
+    margin: 0 0 $content_spacing_small $content_spacing_small;
+    padding: 0 0 0 $content_spacing_small;
+    border-left: 3px solid $color-gray-200;
+}
+
+@at-root .theme--dark .post-content {
+    dt {
+        color: $color-gray-50;
+    }
+
+    dd {
+        border-color: $color-gray-700;
+    }
+}

@@ -1,0 +1,34 @@
+{{! Template: Post }}
+{{!< default-post}}
+
+{{!-- {{> "header-mobile"}} --}}
+{{!-- {{> "menu" class="header__post"}}  --}}
+
+<div class="post">
+
+    <main class="post__main">
+        {{#post}}
+
+            {{> "post/post-title"}}
+            
+            <div class="post-body">
+                <div class="post-content">
+
+                    {{#if custom_excerpt}}
+                    <span class="article-excerpt">{{custom_excerpt}}</span>
+                    {{/if}}
+
+                    {{content}}
+                </div>
+            </div>
+
+            {{!-- {{> "post/post-footer"}} --}}
+
+            {{> "comments"}}
+
+        {{/post}}
+    </main>
+
+    {{!-- {{> "sidebar" class="post__sidebar sidebar--static"}} --}}
+
+</div>

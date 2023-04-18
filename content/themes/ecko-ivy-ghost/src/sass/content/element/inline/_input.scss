@@ -1,0 +1,130 @@
+/**
+ *   Content - Element - Inline - Input
+ */
+
+input,
+textarea,
+select,
+button {
+    background: transparent;
+    margin: calc(#{ $content_spacing_small } / 2) 0 $content_spacing_small;
+
+    &:last-child {
+        margin-bottom: 0;
+    }
+}
+
+input[type='email'],
+input[type='number'],
+input[type='search'],
+input[type='text'],
+input[type='tel'],
+input[type='url'],
+input[type='password'],
+input[type='time'],
+input[type='date'],
+input[type='datetime-local'],
+input[type='month'],
+input[type='week'],
+input[type='color'],
+input[type='file'],
+textarea,
+select {
+    display: block;
+    width: 100%;
+    padding: $content_spacing_tiny;
+    border-radius: 10px;
+    box-shadow: none;
+    font-size: pxtorem(15);
+    line-height: 1;
+
+    &:focus {
+        outline: 0;
+    }
+}
+
+input[type='email'],
+input[type='number'],
+input[type='search'],
+input[type='text'],
+input[type='tel'],
+input[type='url'],
+input[type='password'],
+input[type='time'],
+input[type='date'],
+input[type='datetime-local'],
+input[type='month'],
+input[type='week'],
+input[type='color'],
+textarea {
+    appearance: none;
+}
+
+input[type='search'] {
+    box-sizing: border-box;
+}
+
+input[type='color'] {
+    min-height: $content_spacing_medium;
+    padding: calc(#{ $content_spacing_tiny } / 4);
+}
+
+input[type='file'] {
+    height: auto;
+    padding: $content_spacing_tiny;
+    line-height: 0;
+}
+
+textarea {
+    min-height: calc(#{ $content_spacing_large } * 2);
+}
+
+select[size]:not([size='1']),
+select[multiple] {
+    height: auto;
+    background: none;
+    text-indent: 0;
+}
+
+label,
+legend {
+    display: block;
+    color: $color-gray-900;
+    font-weight: 500;
+    font-size: pxtorem(17);
+    font-family: var(--font-header);
+    line-height: 1;
+}
+
+input[type='checkbox'],
+input[type='radio'] {
+    display: inline;
+    vertical-align: -2px;
+    margin-right: calc(#{ $content_spacing_tiny } / 2);
+}
+
+input[type='submit'],
+input[type='button'] {
+    cursor: pointer;
+}
+
+textarea {
+    line-height: 2;
+}
+
+
+@at-root .theme--dark .post-content {
+    label,
+    legend {
+        color: $color-gray-100;
+    }
+
+    input, select, textarea  {
+        color: $color-gray-100;
+        border-color: $color-gray-800;
+    }
+
+    ::placeholder {
+        color: $color-gray-100;
+    }
+}

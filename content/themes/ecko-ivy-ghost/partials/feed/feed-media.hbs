@@ -1,0 +1,11 @@
+{{! Partial: Feed }}
+
+        <div class="container-media">
+    {{!-- {{#get "posts" limit="all"}} --}}
+        {{#foreach posts limit="all"}}
+            {{#has tag="media"}}
+                {{> "loop-media"}}
+            {{/has}}
+        {{/foreach}}
+    {{!-- {{/get}} --}}
+    </div>

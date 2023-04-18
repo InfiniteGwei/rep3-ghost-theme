@@ -1,0 +1,25 @@
+/*------------------------------------------------------------------
+    Layout: Body
+-------------------------------------------------------------------*/
+
+.body {
+    background: $color-cool-gray-100;
+    color: $color-gray-900;
+
+    &--no-scroll {
+        pointer-events: none;
+        overflow-y: hidden;
+        overflow: hidden;
+
+        #ghost-portal-root {
+            transition: opacity 0.25s ease-out;
+            opacity: 0;
+        }
+    }
+}
+
+.theme--dark {
+    .body {
+        background: $color-gray-900;
+    }
+}

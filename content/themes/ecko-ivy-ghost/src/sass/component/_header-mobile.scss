@@ -1,0 +1,19 @@
+/*------------------------------------------------------------------
+    Component: Header Mobile
+-------------------------------------------------------------------*/
+
+.header-mobile {
+    height: pxtorem(100);
+    background: $color-blue-gray-950;
+    display: none;
+    align-items: center;
+    padding: 0 unquote("min(7.5vw, 3.75rem);");
+
+    &__logo {
+        max-width: 40%;
+    }
+
+    @media (max-width: 1240px) {
+        display: flex;
+    }
+}

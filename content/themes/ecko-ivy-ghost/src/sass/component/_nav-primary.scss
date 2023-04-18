@@ -1,0 +1,113 @@
+// /*------------------------------------------------------------------
+//     Components: Nav - Primary
+// -------------------------------------------------------------------*/
+
+// .nav-primary {
+//     &__items {
+//         margin: 0;
+//         padding: 0;
+//         list-style: none;
+//     }
+
+//     &__item {
+//         margin-bottom: pxtorem(15);
+//         color: $color-white;
+//         font-weight: 600;
+//         //font-size: pxtorem(16);
+//         font-size: 2.25rem;
+
+//         &:last-of-type {
+//             margin-bottom: 0;
+//         }
+//     }
+
+//     &__anchor {
+//         display: flex;
+//         align-items: center;
+//         padding: pxtorem(10) 0;
+
+//         &:before {
+//             content: '';
+//             display: block;
+//             width: 13px;
+//             height: 8px;
+//             margin-right: pxtorem(22);
+//             border-radius: 10px;
+//             background: $color-gray-800;
+//             transition: background 0.25s ease-out;
+//         }
+
+//         &--active {
+//             &:before {
+//                 background: var(--color-accent);
+//             }
+//         }
+
+//         &:focus,
+//         &:hover {
+//             &:before {
+//                 background: $color-gray-600;
+//         }
+//     }
+// } 
+// }
+
+/*------------------------------------------------------------------
+    Components: Nav - Primary
+-------------------------------------------------------------------*/
+
+.nav-primary {
+    &__items {
+      margin: 0;
+      padding: 0;
+      list-style: none;
+    }
+  
+    &__item {
+      margin-bottom: pxtorem(15);
+      color: $color-white;
+      font-weight: 600;
+      font-size: 2.25rem;
+  
+      &:last-of-type {
+        margin-bottom: 0;
+      }
+    }
+  
+    &__anchor {
+      display: flex;
+      align-items: center;
+      padding: pxtorem(10) 0;
+      color: $color-white;
+  
+      &:before {
+        content: '-';
+        display: inline-block;
+        margin-right: pxtorem(10);
+        font-size: 2.25rem;
+        color: transparent;
+        transition: color 0.25s ease-out;
+      }
+  
+      &--active {
+        color: #00E500;
+  
+        &:before {
+          color: #00E500;
+        }
+      }
+  
+      &:hover:not(&--active) {
+        color: #95ff95;
+        &:before {
+          color: #95ff95;
+        }
+      }
+  
+      &:focus {
+        outline: none;
+      }
+    }
+  }
+  
+  

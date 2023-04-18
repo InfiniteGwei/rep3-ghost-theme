@@ -1,0 +1,13 @@
+{{! Partial: Widget - Tag Cloud }}
+
+{{#get "tags" limit="15" order="count.posts"}}
+    {{#if tags}}
+        <section class="sidebar__widget widget-tag-cloud">
+            <div class="widget-tag-cloud__tags">
+                {{#foreach tags}}
+                    <a href="{{url}}" class="widget-tag-cloud__tag widget-tag-cloud__tag--{{slug}}">{{name}}</a>
+                {{/foreach}}
+            </div>
+        </section>
+    {{/if}}
+{{/get}}

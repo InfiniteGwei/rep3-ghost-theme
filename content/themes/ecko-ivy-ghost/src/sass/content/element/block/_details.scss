@@ -1,0 +1,49 @@
+/**
+ *   Content - Element - Block - Details
+ */
+
+details {
+    margin: $content_spacing_medium  0;
+
+    &[open] {
+        border-bottom: 1px solid $color-gray-100;
+    }
+
+    summary {
+        font-family: var(--font-header);
+        font-weight: 500;
+        padding: $content_spacing_tiny $content_spacing_small;
+        border-radius: 10px;
+        line-height: 1.5;
+        border: 1px solid $color-gray-200;
+        outline: 0;
+        color: $color-gray-900;
+        cursor: pointer;
+        user-select: none;
+    }
+
+    p {
+        padding: $content_spacing_tiny $content_spacing_small;
+
+        &:first-of-type {
+            margin-top: 0;
+        }
+
+        &:last-of-type {
+            margin-bottom: 0;
+        }
+    }
+}
+
+@at-root .theme--dark .post-content {
+    details {
+        &[open] {
+            border-color: $color-gray-900;
+        }
+
+        summary {
+            color: $color-gray-50;
+            border-color: $color-gray-800;
+        }
+    }
+}

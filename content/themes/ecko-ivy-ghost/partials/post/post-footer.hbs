@@ -1,0 +1,43 @@
+{{! Partial: Post - Footer }}
+
+{{!-- <section class="post-footer">
+    <section class="post-footer__authors">
+        {{t "Written in collaboration with"}}: {{authors}}
+    </section>
+    <ul class="post-footer__post-shre post-shre">
+        <li class="post-shre__item post-shre__item--intro">{{t "Share"}}:</li>
+        <li class="post-shre__item post-shre__item--twitter">
+            <a href="#" data-location="https://twitter.com/share?text={{encode title}}&amp;url={{url absolute="true"}}" onclick="window.open(this.dataset.location, '_blank'); return false;" class="post-shre__anchor">
+                {{> "svg/social/twitter" class="post-shre__icon"}}
+                <span class="post-shre__label">Twitter</span>
+            </a>
+        </li>
+        <li class="post-shre__item post-shre__item--facebook">
+            <a href="#" data-location="https://www.facebook.com/sharer/sharer.php?u={{url absolute="true"}}" onclick="window.open(this.dataset.location, '_blank'); return false;" class="post-shre__anchor">
+                {{> "svg/social/facebook" class="post-shre__icon"}}
+                <span class="post-shre__label">Facebook</span>
+            </a>
+        </li>
+        <li class="post-shre__item post-shre__item--linkedin">
+            <a href="#" data-location="https://www.linkedin.com/shareArticle?mini=true&amp;url={{url absolute="true"}}&amp;title={{encode title}}" onclick="window.open(this.dataset.location, '_blank'); return false;" class="post-shre__anchor">
+                {{> "svg/social/linkedin" class="post-shre__icon"}}
+                <span class="post-shre__label">LinkedIn</span>
+            </a>
+        </li>
+        <li class="post-shre__item post-shre__item--email">
+            <a href="mailto:?subject={{encode title}}&body={{url absolute="true"}}" class="post-shre__anchor">
+                {{> "svg/mail" class="post-shre__icon"}}
+                <span class="post-shre__label">{{t "Email"}}</span>
+            </a>
+        </li>
+    </ul>
+    {{#if tags}}
+        <ul class="post-footer__tags">
+            {{#foreach tags}}
+                <li class="post-footer__tag post-footer__tag--{{slug}} {{^if @index}}post-footer__tag--category{{/if}}">
+                    <a href="{{url}}" class="post-footer__tag-anchor">{{name}}</a>
+                </li>
+            {{/foreach}}
+        </ul>
+    {{/if}}
+</section> --}}

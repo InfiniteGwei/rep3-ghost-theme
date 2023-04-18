@@ -1,0 +1,64 @@
+{{! Partial: Card - Standard }}
+
+<article class="card {{#has tag="#ivy-theme-dark"}}card--theme-dark{{/has}} {{#if class}}{{class}}{{/if}}">
+    {{#if feature_image}}
+        <a href="{{url}}" class="card__header" tabindex="-1">
+            <div class="card__header-gradient"></div>
+            <picture class="card__header-background">
+                <img src="{{img_url feature_image size="800"}}" class="card__header-image" alt="{{title}}" loading="lazy" />
+            </picture>
+        </a>
+    {{/if}}
+    <div class="card__inner">
+
+        {{!-- removed this because rep3's blog won't have paid posts! --}}
+        {{!-- {{#has visibility="paid"}}
+            <div class="card__premium {{#if feature_image}}card__premium--absolute{{/if}}">{{t "Premium"}}</div>
+        {{/has}} --}}
+
+        {{!-- {{#if primary_tag}}
+            <div class="card__category">
+                <a href="{{primary_tag.url}}" class="card__anchor">{{primary_tag.name}}</a>
+            </div>
+        {{/if}} --}}
+        <div class="post-wrapper">
+            <h2 class="card__title">
+                <a href="{{url}}" class="card__title-anchor">{{title}}</a>
+            </h2>
+
+            <div class="card__date">
+                <a href="{{url}}" class="card__anchor">
+                    <time datetime="{{date format="YYYY-MM-DD"}}">{{date format="Do MMMM YYYY"}}</time>
+                </a>
+            </div>
+            <hr class="card__divider"/>
+            {{#if excerpt}}
+                <p class="card__excerpt">
+                    {{#if custom_excerpt}}
+                        {{custom_excerpt}}
+
+                    {{else}}
+                            {{excerpt words="20"}}...
+                    {{/if}}
+                </p>
+            {{/if}}
+        </div>
+
+        {{!-- All posts written by infi, so removing this for now. :) --}}
+        {{!-- <a href="{{primary_author.url}}" class="card__author">
+            {{#if primary_author.profile_image}}
+                <picture class="card__author-avatar">
+                    <img src="{{img_url primary_author.profile_image size="32"}}" class="card__author-image" alt="{{primary_author.name}}" loading="lazy" />
+                </picture>
+            {{/if}}
+            <div class="card__author-name">{{primary_author.name}}</div>
+        </a> --}}
+
+        <a class="post-link" href="{{url}}">
+            <footer class="post-footer">
+            <span class="post-more">Read More</span>
+            </footer>
+        </a>
+    </div>
+</article>
+

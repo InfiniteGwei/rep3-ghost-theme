@@ -1,0 +1,30 @@
+/*------------------------------------------------------------------
+    Components: Widget - Socials
+-------------------------------------------------------------------*/
+
+.widget-socials {
+    display: flex;
+
+    &__items {
+        display: grid;
+        grid-template-rows: 1fr;
+        grid-template-columns: 1fr;
+        grid-auto-flow: column;
+        align-items: center;
+        gap: 0 pxtorem(5);
+        margin: 0 0 0 pxtorem(-10);
+        padding: 0;
+        list-style: none;
+    }
+
+    &__anchor {
+        display: block;
+        padding: pxtorem(10);
+        color: $color-gray-300;
+
+        &:focus,
+        &:hover {
+            color: var(--color-accent);
+        }
+    }
+}

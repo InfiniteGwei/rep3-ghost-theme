@@ -1,0 +1,34 @@
+{{! Partial: Subscribe }}
+
+{{#if @custom.subscribe_enabled}}
+    {{#unless @member}}
+        <article class="sub {{#if class}}{{class}}{{/if}}">
+            {{> "svg/mail" class="sub__title-icon"}}
+            <h2 class="sub__header">{{t "Subscribe"}}</h2>
+            <hr class="sub__divider"/>
+            {{#if @custom.subscribe_description}}
+                <p class="sub__excerpt">
+                    {{@custom.subscribe_description}}
+                </p>
+            {{/if}}
+            <form class="sub__form" data-members-form="signup">
+                <label class="sub__label">
+                    <span class="sub__key">{{t "Email Address"}}</span>
+                    <input class="sub__input" name="email" type="email" placeholder="{{t "Type your email..."}}" required="required" data-members-email />
+                </label>
+                <button type="submit" class="sub__button" aria-label="{{t "Subscribe"}}">
+                    {{> "svg/arrow" class="sub__button-icon"}}
+                </button>
+                <p class="sub__message sub__message--success">
+                    <span class="sub__primary">{{t "Thanks for subscribing!"}}</span> {{t "Check your inbox to confirm your subscription."}}
+                </p>
+                <p class="sub__message sub__message--error">
+                    <span class="sub__primary">{{t "Please enter a valid email address!"}}</span>
+                </p>
+                <p class="sub__footnote">
+                    <a href="#" data-portal="signin" class="sub__anchor">{{t "Already a subscriber?"}} {{t "Sign In"}}</a>.
+                </p>
+            </form>
+        </article>
+    {{/unless}}
+{{/if}}

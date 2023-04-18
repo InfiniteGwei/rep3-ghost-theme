@@ -1,0 +1,128 @@
+/*------------------------------------------------------------------
+    Components: Widget - Feature
+-------------------------------------------------------------------*/
+
+.widget-feature {
+    $self: &;
+
+    &__post {
+        position: relative;
+        display: block;
+        overflow: hidden;
+        min-height: pxtorem(480);
+        border-radius: 10px;
+        background: $color-blue-gray-950;
+
+        &:after {
+            content: '';
+            position: absolute;
+            bottom: 0;
+            left: 0;
+            z-index: 100;
+            display: block;
+            width: 100%;
+            height: 10px;
+            background: var(--color-accent);
+            transform: translateY(6px);
+        }
+
+        &:hover,
+        &:focus {
+            #{ $self }__background {
+                background: $color-gray-700;
+            }
+
+            #{ $self }__info {
+                transform: translateY(-10px);
+            }
+        }
+    }
+
+    &__background {
+        position: absolute;
+        z-index: 50;
+        display: block;
+        width: 100%;
+        height: 100%;
+        background: $color-gray-500;
+        transition: background 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+    }
+
+    &__background-image {
+        object-fit: cover;
+        object-position: center;
+        width: 100%;
+        height: 100%;
+        pointer-events: none;
+        user-select: none;
+        mix-blend-mode: overlay;
+    }
+
+    &__avatar-image {
+        object-fit: cover;
+        width: 100%;
+        height: 100%;
+    }
+
+    &__gradient {
+        position: absolute;
+        z-index: 100;
+        width: 100%;
+        height: 100%;
+        background: linear-gradient(-180deg, transparent 20%, #000 100%);
+        opacity: 0.8;
+    }
+
+    &__inner {
+        position: absolute;
+        z-index: 150;
+        display: flex;
+        flex-direction: column;
+        justify-content: space-between;
+        width: 100%;
+        height: 100%;
+        padding: pxtorem(35);
+    }
+
+    &__mark {
+        align-self: flex-start;
+        padding: pxtorem(10) pxtorem(15);
+        border-radius: 10px;
+        background: var(--color-accent-lighter);
+        color: var(--color-accent-darker);
+        font-weight: 500;
+        font-size: pxtorem(13);
+        font-family: var(--font-header);
+        user-select: none;
+    }
+
+    &__info {
+        transition: transform 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+    }
+
+    &__avatar {
+        display: block;
+        overflow: hidden;
+        width: pxtorem(36);
+        height: pxtorem(36);
+        margin: 0 0 pxtorem(25);
+        border: 2px solid $color-white;
+        border-radius: 72px;
+    }
+
+    &__tag {
+        margin: 0 0 pxtorem(17);
+        color: var(--color-accent-light);
+        font-weight: 600;
+        font-size: pxtorem(16);
+    }
+
+    &__header {
+        margin: 0;
+        color: $color-white;
+        font-weight: 400;
+        font-size: pxtorem(25);
+        font-family: var(--font-header);
+        line-height: pxtorem(36);
+    }
+}

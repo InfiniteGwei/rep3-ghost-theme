@@ -1,0 +1,85 @@
+/*------------------------------------------------------------------
+    Component: Content - CTA
+-------------------------------------------------------------------*/
+
+.post-content .content-cta {
+    border: 1px solid $color-gray-200;
+    padding: unquote("min(7.5vw, #{pxtorem(60)})");
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    border-radius: 10px;
+    margin-top: unquote("min(7.5vw, #{pxtorem(60)})");
+    position: relative;
+
+    &:before {
+        content: '';
+        position: absolute;
+        top: pxtorem(-302);
+        left: -5%;
+        width: 110%;
+        height: pxtorem(300);
+        background: linear-gradient(180deg, rgba(255, 255, 255, 0) -10.92%, rgba(255, 255, 255, 0.0625) -10.91%, $color-white 80.36%);
+    }
+
+    &__header {
+        margin: 0 0 pxtorem(30);
+    }
+
+    &__description {
+        margin: 0 0 pxtorem(40);
+        max-width: pxtorem(680);
+        text-align: center;
+    }
+
+    &__button {
+        background: var(--color-accent);
+        border-radius: 10px;
+        color: $color-white;
+        font-weight: 500;
+        font-size: pxtorem(18);
+        font-family: var(--font-header);
+        padding: pxtorem(22) unquote("min(7.5vw, #{pxtorem(60)})");
+        text-align: center;
+        line-height: 1.4;
+        text-decoration: none;
+
+        &:focus,
+        &:hover {
+            background: var(--color-accent-dark);
+        }
+    }
+
+    &__signin {
+        display: block;
+        margin-top: pxtorem(25);
+        color: $color-gray-400;
+        font-size: pxtorem(16);
+        text-decoration: none;
+
+        &:focus,
+        &:hover {
+            color: $color-gray-600;
+        }
+    }
+}
+
+.theme--dark {
+    .post-content .content-cta {
+        border-color: $color-gray-800;
+
+        &:before {
+            background: linear-gradient(180deg, rgba($color-blue-gray-950, 0) -10.92%, rgba($color-blue-gray-950, 0.0625) -10.91%, $color-blue-gray-950 80.36%);
+        }
+
+        &__signin {
+            color: $color-gray-500;
+
+            &:focus,
+            &:hover {
+                color: $color-gray-300;
+            }
+        }
+    }
+}

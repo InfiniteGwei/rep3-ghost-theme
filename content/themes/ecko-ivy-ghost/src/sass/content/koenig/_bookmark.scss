@@ -1,0 +1,120 @@
+/**
+ *   Content - Koenig - Bookmark
+ */
+
+.kg-bookmark {
+    &-card {
+        overflow: hidden;
+        max-width: 100%;
+    }
+
+    &-container {
+        display: flex;
+        color: $color-gray-900;
+        border: 1px solid $color-gray-200;
+        border-radius: 10px;
+        overflow: hidden;
+        flex-wrap: wrap;
+
+        &:focus,
+        &:hover {
+            border-color: $color-gray-300;
+            text-decoration: transparent;
+        }
+    }
+
+    &-content {
+        display: grid;
+        min-width: 50%;
+        padding: pxtorem(35);
+        flex-basis: 0;
+        flex-grow: 1000;
+    }
+
+    &-title {
+        font-size: pxtorem(17);
+        font-weight: 500;
+        line-height: pxtorem(26);
+        color: $color-gray-900;
+    }
+
+    &-description {
+        font-size: pxtorem(15);
+        font-weight: 450;
+        overflow: hidden;
+        min-width: 0;
+        margin-top: pxtorem(15);
+        white-space: nowrap;
+        text-overflow: ellipsis;
+        color: $color-gray-600;
+    }
+
+    &-metadata {
+        font-size: pxtorem(15);
+        display: flex;
+        margin-top: pxtorem(20);
+        color: $color-gray-600;
+        align-items: center;
+    }
+
+    &-thumbnail {
+        flex-basis: 20rem;
+        flex-grow: 1;
+        padding: pxtorem(10);
+
+        img {
+            width: 100%;
+            height: 100%;
+            margin: 0;
+            vertical-align: middle;
+            border-radius: 10px;
+            object-fit: cover;
+        }
+    }
+
+    &-icon {
+        width: pxtorem(20);
+        height: pxtorem(20);
+        margin: 0;
+        vertical-align: middle;
+    }
+
+    &-author {
+        margin-left: pxtorem(12);
+    }
+
+    &-publisher {
+        line-height: normal;
+
+        &:before {
+            margin: 0 pxtorem(12);
+            content: '-';
+        }
+    }
+}
+
+@at-root .theme--dark .post-content {
+    .kg-bookmark {
+        &-container {
+            color: $color-gray-100;
+            border-color: $color-gray-800;
+
+            &:focus,
+            &:hover {
+                border-color: $color-gray-700;
+            }
+        }
+
+        &-title {
+            color: $color-gray-100;
+        }
+
+        &-description {
+            color: $color-gray-400;
+        }
+
+        &-metadata {
+            color: $color-gray-400;
+        }
+    }
+}

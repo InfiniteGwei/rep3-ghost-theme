@@ -1,0 +1,61 @@
+/*------------------------------------------------------------------
+    Layout: Sidebar
+-------------------------------------------------------------------*/
+
+.sidebar {
+    $self: &;
+    width: pxtorem(455);
+    min-height: 100vh;
+    padding: unquote("min(12vw, #{pxtorem(60)})");
+    border-radius: 0 0 pxtorem(10) pxtorem(10);
+    background: $color-blue-gray-950;
+
+    &--scroll {
+        max-height: 100vh;
+        height: 100vh;
+        overflow-y: scroll;
+        overscroll-behavior-y: contain;
+        border-radius: 0;
+
+        @supports (-webkit-touch-callout: none) {
+            padding-bottom: pxtorem(200);
+        }
+    }
+
+    &--short {
+        border-radius: 0 0 pxtorem(10) 0;
+    }
+
+    &__widget {
+        padding: pxtorem(60) 0;
+        border-bottom: 1px solid $color-gray-800;
+        color: $color-gray-300;
+
+        &:first-of-type {
+            padding-top: 0;
+        }
+
+        &:last-of-type {
+            border-bottom: 0;
+            padding-bottom: 0;
+        }
+    }
+
+    @media (max-width: 1540px) {
+        &--static {
+            padding: 3.15vw;
+
+            #{ $self }__widget {
+                padding: 3.15vw 0;
+
+                &:first-of-type {
+                    padding-top: 0;
+                }
+
+                &:last-of-type {
+                    padding-bottom: 0;
+                }
+            }
+        }
+    }
+}

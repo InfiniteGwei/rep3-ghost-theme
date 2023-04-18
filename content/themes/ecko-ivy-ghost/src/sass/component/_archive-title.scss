@@ -1,0 +1,28 @@
+/*------------------------------------------------------------------
+    Component: Archive Title
+-------------------------------------------------------------------*/
+
+.archive-title {
+    &__header {
+        color: $color-white;
+        font-weight: 500;
+        font-size: pxtorem(38);
+        line-height: 1.26;
+        margin: 0;
+    }
+
+    &__description {
+        margin: pxtorem(20) 0 0;
+        color: $color-gray-300;
+        font-size: pxtorem(21);
+        line-height: 1.9;
+        letter-spacing: pxtorem(0.2);
+        font-weight: 450;
+    }
+
+    @media (max-width: 860px) {
+        &__description {
+            font-size: pxtorem(19);
+        }
+    }
+}

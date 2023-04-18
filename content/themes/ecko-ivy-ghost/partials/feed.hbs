@@ -1,0 +1,31 @@
+{{#is "index"}}
+    {{> "feed/feed-main"}}
+{{else is "conversations"}}
+    {{> "feed/feed-conversations"}}
+{{else is "media"}}
+    {{> "feed/feed-media"}}
+{{else}}
+    {{> "feed/feed-updates"}}
+{{/is}}
+
+
+
+{{!-- {{#is "index"}}
+    {{> "feed/feed-media"}}
+{{else is "conversations"}}
+    {{> "feed/feed-conversations"}}
+{{else is "media"}}
+    {{> "feed/feed-media"}}
+{{else is "updates"}}
+{{> "feed/feed-updates"}}
+{{/is}} --}}
+
+{{!-- {{#is "index"}}
+    {{> "feed/feed-conversations"}}
+{{else is "conversations"}}
+    {{> "feed/feed-conversations"}}
+{{else is "media"}}
+    {{> "feed/feed-conversations"}}
+{{else is "updates"}}
+    {{> "feed/feed-conversations"}}
+{{/is}} --}}

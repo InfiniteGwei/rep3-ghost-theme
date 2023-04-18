@@ -1,0 +1,23 @@
+/**
+ *   Content - Element - Block - Figure
+ */
+
+& > figure {
+    margin: $content_spacing_medium  0;
+}
+
+figcaption {
+    font-size: pxtorem(16);
+    line-height: 1.75;
+    font-family: var(--font-header);
+    max-width: 90%;
+    padding: $content_spacing_tiny 0 0;
+    color: $color-gray-500;
+    margin-bottom: calc((#{ $content_spacing_tiny } / 2) * -1);
+}
+
+@at-root .theme--dark .post-content {
+    figcaption {
+        color: $color-gray-400;
+    }
+}

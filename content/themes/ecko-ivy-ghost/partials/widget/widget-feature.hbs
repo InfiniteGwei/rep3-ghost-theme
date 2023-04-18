@@ -1,0 +1,32 @@
+{{! Partial: Widget - Feature }}
+
+{{#get "posts" filter="featured:true+feature_image:-null" include="tags,authors" limit="1"}}
+    {{#if posts}}
+        <section class="sidebar__widget widget-feature">
+            {{#foreach posts}}
+                <a href="{{url}}" class="widget-feature__post">
+                    <picture class="widget-feature__background">
+                        <img src="{{img_url feature_image size="800"}}" class="widget-feature__background-image" alt="{{title}}" loading="lazy" />
+                    </picture>
+                    <div class="widget-feature__gradient"></div>
+                    <div class="widget-feature__inner">
+                        <div class="widget-feature__mark">
+                            {{t "Featured"}}
+                        </div>
+                        <div class="widget-feature__info">
+                            {{#if primary_author.profile_image}}
+                                <picture class="widget-feature__avatar">
+                                    <img src="{{img_url primary_author.profile_image size="32"}}" class="widget-feature__avatar-image" alt="{{primary_author.name}}" loading="lazy" />
+                                </picture>
+                            {{/if}}
+                            <div class="widget-feature__tag">
+                                {{primary_tag.name}}
+                            </div>
+                            <h3 class="widget-feature__header">{{title}}</h3>
+                        </div>
+                    </div>
+                </a>
+            {{/foreach}}
+        </section>
+    {{/if}}
+{{/get}}

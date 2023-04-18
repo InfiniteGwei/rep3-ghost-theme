@@ -1,0 +1,63 @@
+{{! Partial: Header - Tag }}
+{{!-- Not going to use this
+<header class="header header--archive">
+    {{#if feature_image}}
+        <div class="header__background">
+            <picture class="header__picture">
+                <img
+                    class="header__image"
+                    srcset="{{img_url feature_image size="320"}} 320w,
+                        {{img_url feature_image size="480"}} 480w,
+                        {{img_url feature_image size="800"}} 800w,
+                        {{img_url feature_image size="1120"}} 1120w,
+                        {{img_url feature_image size="1440"}} 1440w,
+                        {{img_url feature_image size="1680"}} 1680w"
+                    sizes="(min-width: 1660px) 1485px, 90vw"
+                    src="{{img_url feature_image size="1680"}}"
+                    alt="{{name}}"
+                />
+            </picture>
+        </div>
+    {{else if @site.cover_image}}
+        <div class="header__background">
+            <picture class="header__picture">
+                <img
+                    class="header__image"
+                    srcset="{{img_url @site.cover_image size="320"}} 320w,
+                        {{img_url @site.cover_image size="480"}} 480w,
+                        {{img_url @site.cover_image size="800"}} 800w,
+                        {{img_url @site.cover_image size="1120"}} 1120w,
+                        {{img_url @site.cover_image size="1440"}} 1440w,
+                        {{img_url @site.cover_image size="1680"}} 1680w"
+                    sizes="(min-width: 1660px) 1485px, 90vw"
+                    src="{{img_url @site.cover_image size="1680"}}"
+                    alt="{{@site.title}}"
+                />
+            </picture>
+        </div>
+    {{/if}}
+    <div class="header__content">
+        <section class="header__upper">
+            <section class="header__logo logo">
+                <h1 class="logo__title">
+                    {{#if @site.logo}}
+                        <a href="{{@site.url}}" class="logo__anchor">
+                            <img src="{{@site.logo}}" class="logo__image" alt="{{@site.title}}" loading="lazy" />
+                        </a>
+                    {{else}}
+                        <span class="logo__header">
+                            <a href="{{@site.url}}" class="blog-info__anchor">{{@site.title}}</a>
+                        </span>
+                    {{/if}}
+                </h1>
+            </section>
+            {{> "menu" class="header__menu menu--row menu--light"}}
+        </section>
+        <section class="header__main archive-title">
+            <h1 class="archive-title__header">{{name}}</h1>
+            {{#if description}}
+                <p class="archive-title__description">{{description}}</p>
+            {{/if}}
+        </section>
+    </div>
+</header> --}}

@@ -1,0 +1,29 @@
+{{! Partial: Widget - Subscribe }}
+
+{{#if @custom.subscribe_enabled}}
+    {{^if @member}}
+        <section class="sidebar__widget widget-sub">
+            <h3 class="widget-sub__title">{{t "Subscribe to {blogtitle}" blogtitle=@site.title}}</h3>
+            {{#if @custom.subscribe_description}}
+                <p class="widget-sub__excerpt">
+                    {{@custom.subscribe_description}}
+                </p>
+            {{/if}}
+            <form class="widget-sub__form" data-members-form="signup">
+                <label class="widget-sub__label">
+                    <span class="widget-sub__key">{{t "Email Address"}}</span>
+                    <input class="widget-sub__input" name="email" type="email" placeholder="{{t "Type your email..."}}" required="required" data-members-email />
+                </label>
+                <button type="submit" class="widget-sub__button" aria-label="{{t "Subscribe"}}">
+                    {{> "svg/arrow" class="widget-sub__svg"}}
+                </button>
+                <p class="widget-sub__message widget-sub__message--success">
+                    <span class="widget-sub__primary">{{t "Thanks for subscribing!"}}</span> {{t "Check your inbox to confirm your subscription."}}
+                </p>
+                <p class="widget-sub__message widget-sub__message--error">
+                    <span class="widget-sub__primary">{{t "Please enter a valid email address!"}}</span>
+                </p>
+            </form>
+        </section>
+    {{/if}}
+{{/if}}

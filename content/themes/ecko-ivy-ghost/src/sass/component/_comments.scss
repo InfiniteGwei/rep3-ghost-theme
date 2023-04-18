@@ -1,0 +1,61 @@
+/*------------------------------------------------------------------
+    Component: Comments
+-------------------------------------------------------------------*/
+
+.comments {
+    display: none;
+    background: $color-cool-gray-50;
+    color: var(--color-accent);
+
+    &__title {
+        display: flex;
+        align-items: center;
+        width: 100%;
+        height: pxtorem(150);
+        padding: unquote("min(7.5vw, #{pxtorem(60)})");
+        background: $color-cool-gray-50;
+        color: $color-gray-600;
+        font-weight: 500;
+        font-size: pxtorem(22);
+        font-family: var(--font-header);
+        transition: background 0.25s ease-out;
+        transition: color 0.25s ease-out;
+
+        &:focus,
+        &:hover {
+            color: $color-gray-900;
+        }
+    }
+
+    &__icon {
+        margin-right: pxtorem(25);
+    }
+
+    &__disqus {
+        display: none;
+        min-height: pxtorem(150);
+        padding: unquote("min(7.5vw, #{pxtorem(60)})");
+    }
+
+    @media (max-width: 680px) {
+        &__title {
+            justify-content: center;
+        }
+    }
+}
+
+.theme--dark {
+    .comments {
+        background: $color-gray-800;
+
+        &__title {
+            background: $color-gray-800;
+            color: $color-gray-300;
+
+            &:focus,
+            &:hover {
+                color: $color-gray-50;
+            }
+        }
+    }
+}

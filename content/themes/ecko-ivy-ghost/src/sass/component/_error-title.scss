@@ -1,0 +1,58 @@
+/*------------------------------------------------------------------
+    Component: Error Title
+-------------------------------------------------------------------*/
+
+.error-title {
+    &__code {
+        margin: 0 0 unquote("min(5vw, #{pxtorem(20)})");
+        color: $color-black;
+        font-weight: 600;
+        font-size: pxtorem(44);
+        line-height: 1;
+    }
+
+    &__header {
+        margin: 0 0 unquote("min(5vw, #{pxtorem(30)})");
+        color: $color-black;
+        font-weight: 500;
+        font-size: pxtorem(38);
+        line-height: 1.26;
+        margin: 0;
+    }
+
+    &__description {
+        margin: pxtorem(20) 0 0;
+        color: $color-black;
+        font-size: pxtorem(21);
+        line-height: 1.9;
+        letter-spacing: pxtorem(0.2);
+        font-weight: 450;
+    }
+
+    &__button {
+        display: inline-flex;
+        align-items: center;
+        margin-top: pxtorem(40);
+        padding: pxtorem(22) pxtorem(44);
+        border-radius: 10px;
+        background: var(--color-accent);
+        color: $color-white;
+        font-weight: 500;
+        font-size: pxtorem(16);
+
+        &:focus,
+        &:hover {
+            background: var(--color-accent-dark);
+        }
+    }
+
+    &__button-icon {
+        margin-right: pxtorem(20);
+    }
+
+    @media (max-width: 860px) {
+        &__description {
+            font-size: pxtorem(19);
+        }
+    }
+}

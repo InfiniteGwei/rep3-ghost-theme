@@ -1,0 +1,29 @@
+{{! Partial: Card - Square }}
+
+<article class="card card--layout-square card--theme-dark {{#if class}}{{class}}{{/if}}">
+    <div class="card__under">
+        {{#if feature_image}}
+            <picture class="card__under-background">
+                <img src="{{img_url feature_image size="800"}}" class="card__under-image" alt="{{title}}" loading="lazy" />
+            </picture>
+        {{/if}}
+    </div>
+    <a href="{{url}}" class="card__inner card__inner--align-bottom">
+        {{#has visibility="paid"}}
+            <div class="card__premium {{#if feature_image}}card__premium--absolute{{/if}}">{{t "Premium"}}</div>
+        {{/has}}
+        {{#if primary_tag}}
+            <div class="card__category card__category--light">{{primary_tag.name}}</div>
+        {{/if}}
+        <h2 class="card__title card__title--light">{{title}}</h2>
+        <div class="card__date card__date--light">
+            <time datetime="{{date format="YYYY-MM-DD"}}">{{date format="Do MMMM YYYY"}}</time>
+            
+            <footer class="post-footer">
+            <span class="post-more">Read More</span>
+            </footer>
+        </div>
+            
+
+    </a>
+</article>

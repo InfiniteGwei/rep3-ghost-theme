@@ -1,0 +1,31 @@
+{{! Partial: Pagination }}
+
+<nav class="pagination" role="navigation">
+    <div class="pagination__ajax">
+        <div class="pagination__button pagination__button--load-more pagination__button--fetch"
+            data-string-loading-more-articles="{{t "Loading More Articles"}}"
+            data-string-no-more-articles="{{t "No More Articles"}}"
+            data-string-fetch-more-articles="{{t "Fetch More Articles"}}"
+        >
+            <div class="pagination__icon">
+                <div class="pagination__spinner"></div>
+            </div>
+            <span class="pagination__label">{{t "Fetch More Articles"}}</span>
+        </div>
+    </div>
+    <div class="pagination__standard">
+        <a href="{{#if prev}}{{page_url prev}}{{else}}#{{/if}}" class="pagination__button pagination__button--newer {{^if prev}}pagination__button--disabled{{/if}}" aria-label="{{t "Newer Posts"}}">
+            <div class="pagination__icon pagination__icon--rotate">
+                {{> "svg/arrow" class="pagination__svg"}}
+            </div>
+            <span class="pagination__label">{{t "Newer Posts"}}</span>
+        </a>
+        <span class="pagination__page">{{page}} / {{pages}}</span>
+        <a href="{{#if next}}{{page_url next}}{{else}}#{{/if}}" class="pagination__button pagination__button--older {{^if next}}pagination__button--disabled{{/if}}" aria-label="{{t "Older Posts"}}">
+            <div class="pagination__icon pagination__icon--right">
+                {{> "svg/arrow" class="pagination__svg"}}
+            </div>
+            <span class="pagination__label">{{t "Older Posts"}}</span>
+        </a>
+    </div>
+</nav>

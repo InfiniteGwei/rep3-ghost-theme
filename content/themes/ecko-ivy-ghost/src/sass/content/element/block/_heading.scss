@@ -1,0 +1,57 @@
+/**
+ *   Content - Block - Heading
+ */
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+    color: $color-gray-900;
+    font-weight: 500;
+    line-height: 1.4;
+    margin-top: $content_spacing_medium;
+    margin-bottom: $content_spacing_small;
+    letter-spacing: 0;
+}
+
+h4,
+h5,
+h6 {
+    font-weight: 400;
+    margin-top: $content_spacing_medium;
+    margin-bottom: $content_spacing_small;
+}
+
+h1 {
+    font-size: pxtorem(38);
+}
+
+h2 {
+    font-size: pxtorem(32);
+}
+
+h3 {
+    font-size: pxtorem(28);
+}
+
+h4 {
+    font-size: pxtorem(26);
+}
+
+h5,
+h6 {
+    font-size: pxtorem(24);
+}
+
+@at-root .theme--dark .post-content {
+    h1,
+    h2,
+    h3,
+    h4,
+    h5,
+    h6 {
+        color: $color-gray-50;
+    }
+}

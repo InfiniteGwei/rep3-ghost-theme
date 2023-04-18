@@ -1,0 +1,118 @@
+/**
+ *   Content - Element - Block - Table
+ */
+
+& > table {
+    margin: $content_spacing_medium 0;
+}
+
+table {
+    font-weight: 450;
+    font-family: var(--font-body);
+    position: relative;
+    width: 100%;
+    border-collapse: collapse;
+    border-radius: 10px;
+    overflow: hidden;
+}
+
+thead {
+    @media (max-width: 780px) {
+        position: absolute;
+        overflow: hidden;
+        clip: rect(0 0 0 0);
+        width: 1px;
+        height: 1px;
+        margin: -1px;
+        padding: 0;
+        border: none;
+    }
+}
+
+tr {
+    height: $content_spacing_large;
+    font-size: pxtorem(16);
+
+    @media (max-width: 780px) {
+        display: block;
+        height: auto;
+        margin-bottom: pxtorem(30);
+        border-bottom: 3px solid $color-gray-50;
+
+        &:last-child {
+            margin-bottom: 0;
+        }
+    }
+}
+
+th {
+    font-family: var(--font-header);
+    font-weight: 500;
+    font-size: pxtorem(16);
+    text-align: left;
+    color: $color-gray-900;
+    background: $color-gray-50;
+
+    &:first-child {
+        padding-left: $content_spacing_small;
+    }
+
+    &:last-child {
+        padding-right: $content_spacing_small;
+    }
+}
+
+td {
+    border: 0;
+    text-align: left;
+    color: $color-gray-600;
+    border-bottom: 1px solid $color-gray-100;
+    font-size: pxtorem(15);
+
+    &:first-child {
+        padding-left: $content_spacing_small;
+    }
+
+    &:last-child {
+        padding-right: $content_spacing_small;
+    }
+
+    @media (max-width: 780px) {
+        display: block;
+        padding: pxtorem(10) 0;
+        text-align: right;
+        border-bottom: 1px solid $color-gray-100;
+
+        &:before {
+            font-weight: 500;
+            float: left;
+            content: attr(data-label);
+        }
+
+        &:first-child {
+            padding: pxtorem(10) 0;
+        }
+
+        &:last-child {
+            padding-right: 0;
+        }
+    }
+}
+
+@at-root .theme--dark .post-content {
+    th {
+        color: $color-gray-50;
+        background: $color-gray-900;
+    }
+
+    tr {
+        @media (max-width: 780px) {
+            border-color: $color-gray-800;
+        }
+    }
+
+    td {
+        color: $color-gray-100;
+        border-color: $color-gray-800;
+    }
+}

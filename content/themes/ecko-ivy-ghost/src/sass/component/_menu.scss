@@ -1,0 +1,221 @@
+/*------------------------------------------------------------------
+    Component: Menu & Sticky-Logo
+-------------------------------------------------------------------*/
+.menu-wrapper {
+    position: fixed;
+    top: 1rem;
+    right: 1rem;
+}
+
+.sticky-logo-wrapper {
+    position: fixed;
+    top: 1rem;
+    left: 1rem;
+}
+
+// .sticky-logo {
+//     position: relative;
+//     display: flex;
+//     align-items: center;
+//     justify-content: center;
+//     width: pxtorem(56);
+//     height: pxtorem(56);
+//     margin-bottom: pxtorem(15);
+//     border: 2px solid $color-gray-200;
+//     border-radius: 108px;
+//     background: transparent;
+//     color: $color-gray-700;
+//     transition: border-color 0.25s ease-out;
+//     padding: 0;
+// }
+
+.menu {
+    $self: &;
+    display: flex;
+    flex-direction: column;
+    transition: transform 0.4s cubic-bezier(0, 0.55, 0.45, 1);
+    pointer-events: auto;
+    
+    // &--post {
+    //     top: 0;
+    //     position: fixed;
+    // }
+
+    &--shift-left {
+        transform: translateX(pxtorem(-455));
+
+        #{ $self }__item {
+            border-color: $color-gray-600;
+            color: $color-gray-200;
+
+            &:focus-visible,
+            &:hover {
+                border-color: $color-gray-500;
+            }
+        }
+
+        #{ $self }__tooltip {
+            background: $color-gray-800;
+            color: $color-gray-200;
+        }
+    }
+
+    &--fixed {
+        position: fixed;
+        top: pxtorem(30);
+        right: pxtorem(30);
+        z-index: 2000;
+    }
+
+    &--small {
+        #{ $self }__item {
+            width: pxtorem(46);
+            height: pxtorem(46);
+        }
+
+        #{ $self }__icon {
+            width: 16px;
+            height: 16px;
+        }
+    }
+
+    &--row {
+        flex-direction: row-reverse;
+
+        #{ $self }__item {
+            margin: 0 pxtorem(15) 0 0;
+
+            &:first-of-type {
+                margin: 0;
+            }
+        }
+
+        #{ $self }__tooltip {
+            display: none;
+        }
+    }
+
+    &--light {
+        #{ $self }__item {
+            border-color: $color-gray-500;
+            color: $color-gray-200;
+
+            &:focus-visible,
+            &:hover {
+                border-color: $color-gray-400;
+            }
+        }
+    }
+
+    &__item {
+        position: relative;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        width: pxtorem(56);
+        height: pxtorem(56);
+        margin-bottom: pxtorem(15);
+        border: 2px solid $color-gray-200;
+        border-radius: 108px;
+        background: transparent;
+        color: $color-gray-700;
+        transition: border-color 0.25s ease-out;
+        padding: 0;
+
+        @media (hover: hover) {
+            &:focus-visible,
+            &:hover {
+                border-color: $color-gray-300;
+
+                #{ $self }__tooltip {
+                    opacity: 1;
+                    transition-duration: 0.25s;
+                    transform: translateX(0);
+                }
+            }
+        }
+    }
+
+    &__icon {
+        &--menu {
+            vertical-align: pxtorem(-2);
+        }
+
+        &--x {
+            display: none;
+            vertical-align: pxtorem(-2);
+        }
+
+        &--sun {
+            display: none;
+        }
+    }
+
+    &__tooltip {
+        position: absolute;
+        top: pxtorem(10);
+        right: calc(100% + #{pxtorem(20)});
+        width: max-content;
+        padding: pxtorem(10) pxtorem(15);
+        border-radius: 10px;
+        background: $color-white;
+        color: $color-gray-700;
+        font-weight: 500;
+        font-size: pxtorem(12);
+        opacity: 0;
+        pointer-events: none;
+        user-select: none;
+        transition: background 0.3s ease-out, opacity ease-out 0.3s, transform ease-out 0.3s;
+        transition-duration: 0.5s;
+        transform: translateX(pxtorem(-10));
+    }
+
+    @media (max-width: 1720px) {
+        &--fixed {
+            display: none;
+        }
+    }
+}
+
+.body--drawer-active {
+    .menu {
+        &__icon {
+            &--x {
+                display: inline;
+            }
+
+            &--menu {
+                display: none;
+            }
+        }
+    }
+}
+
+.theme--dark {
+    .menu {
+        &__item {
+            border-color: $color-gray-700;
+            color: $color-gray-200;
+
+            &:focus-visible,
+            &:hover {
+                border-color: $color-gray-600;
+            }
+        }
+
+        &__icon {
+            &--moon {
+                display: none;
+            }
+
+            &--sun {
+                display: inline;
+            }
+        }
+
+        &__tooltip {
+            background: $color-gray-800;
+            color: $color-gray-200;
+        }
+    }
+}

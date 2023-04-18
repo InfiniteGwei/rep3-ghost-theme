@@ -1,0 +1,105 @@
+/*------------------------------------------------------------------
+    Base: Default
+-------------------------------------------------------------------*/
+
+* {
+    box-sizing: border-box;
+}
+
+html {
+    background: $color-cool-gray-100;
+    font-family: var(--font-body);
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+
+    @media (max-width: 1240px) {
+        font-size: calc(13px + 0.30vw);
+    }
+
+    @media (max-width: 380px) {
+        font-size: 14px;
+    }
+
+    &.theme--dark {
+        background: $color-gray-900;
+    }
+
+    &.theme--switching {
+        *:not(svg),
+        *:before,
+        *:after {
+            transition: all 0.4s ease-out 0s !important;
+        }
+    }
+}
+
+html,
+body {
+    min-height: 100vh;
+}
+
+a {
+    color: currentColor;
+    text-decoration: none;
+    transition-timing-function: ease-out;
+    transition-duration: 250ms;
+    transition-property: background-color, border-color, color, fill, stroke, text-decoration-color;
+}
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+    color: $color-gray-900;
+    font-family: var(--font-header);
+    line-height: 1.4;
+}
+
+h1 {
+    font-size: pxtorem(48);
+}
+
+h2 {
+    font-size: pxtorem(32);
+}
+
+h3 {
+    font-size: pxtorem(28);
+}
+
+h4,
+h5,
+h6 {
+    font-size: pxtorem(26);
+}
+
+p {
+    //margin: pxtorem(40) 0;
+    margin: 1.15rem;
+    color: $color-gray-600;
+    font-size: pxtorem(17);
+    line-height: 1;
+    letter-spacing: pxtorem(0.2);
+}
+
+::selection {
+    background: rgba($color-gray-500, 0.3);
+}
+
+::-moz-selection {
+    background: rgba($color-gray-500, 0.3);
+}
+
+*:focus {
+    outline-style: dotted;
+    outline-color: $color-cool-gray-400;
+    outline-offset: pxtorem(5);
+    outline-width: pxtorem(2);
+}
+
+*:focus:not(:focus-visible){
+    box-shadow: none !important;
+    outline: none !important;
+}

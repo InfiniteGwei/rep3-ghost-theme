@@ -1,0 +1,14 @@
+/**
+ *   Content - Element - Inline - Mark
+ */
+
+mark {
+    color: inherit;
+    background: var(--color-accent-lighter);
+}
+
+@at-root .theme--dark .post-content {
+    mark {
+        background: var(--color-accent-darker);
+    }
+}

@@ -1,0 +1,22 @@
+routes:
+
+collections:
+  /public-goods/:
+    permalink: /public-goods/{slug}/
+    template: index
+    filter: tag:public-goods
+  /conversations/:
+    permalink: /conversations/{slug}/
+    template: index
+    filter: tag:conversations
+  /updates/:
+    permalink: /updates/{slug}/
+    template: index
+    filter: tag:updates
+  /:
+    permalink: /{slug}/
+    template: index
+
+taxonomies:
+  tag: /tag/{slug}/
+  author: /author/{slug}/

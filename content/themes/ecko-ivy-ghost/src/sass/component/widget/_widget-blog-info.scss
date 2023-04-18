@@ -1,0 +1,54 @@
+/*------------------------------------------------------------------
+    Components: Widget - Blog Info
+-------------------------------------------------------------------*/
+
+.widget-blog-info {
+    &__anchor {
+        display: block;
+    }
+
+    &__image {
+        display: block;
+        max-width: 100%;
+        max-height: pxtorem(60);
+    }
+
+    &__title {
+        width: 100%;
+        margin: 0 0 pxtorem(40);
+        display: flex;
+        align-items: center;
+        justify-items: flex-start;
+        flex-direction: row-reverse;
+        flex-wrap: wrap;
+    }
+
+    &__header {
+        margin: 0;
+        color: $color-white;
+        font-weight: 600;
+        font-size: pxtorem(28);
+        line-height: 1;
+        margin-right: auto;
+    }
+
+    &__description {
+        margin: 0;
+        color: $color-gray-300;
+        font-size: pxtorem(18);
+        line-height: pxtorem(32);
+    }
+
+    &__menu {
+        display: none;
+        margin-left: auto;
+        padding-left: pxtorem(30);
+        margin-bottom: pxtorem(20);
+    }
+
+    @media (max-width: 1720px) {
+        &__menu {
+            display: flex;
+        }
+    }
+}

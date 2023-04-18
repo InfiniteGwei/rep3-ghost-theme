@@ -1,0 +1,14 @@
+/**
+ *   Content - Element - Inline - Anchor
+ */
+
+a {
+    color: var(--color-accent);
+    text-decoration: underline;
+    text-decoration-color: transparent;
+
+    &:focus,
+    &:hover {
+        text-decoration-color: var(--color-accent);
+    }
+}

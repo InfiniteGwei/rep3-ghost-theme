@@ -1,0 +1,126 @@
+/*------------------------------------------------------------------
+    Components: Plans
+-------------------------------------------------------------------*/
+
+.plans {
+    $self: &;
+    margin: pxtorem(60) 0 0;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: pxtorem(60);
+
+    &__plan {
+        display: flex;
+        flex-direction: column;
+        padding: unquote("min(7.5vw, #{pxtorem(40)})");
+        background: $color-white;
+        border-radius: 10px;
+        flex: 1 1 pxtorem(380);
+    }
+
+    &__price {
+        color: var(--color-accent);
+        font-weight: 500;
+        font-size: pxtorem(22);
+        font-family: var(--font-header);
+        margin-bottom: pxtorem(15);
+    }
+
+    &__period {
+        font-size: pxtorem(18);
+    }
+
+    &__title {
+        margin: 0 0 pxtorem(20);
+        color: $color-gray-900;
+        font-weight: 400;
+        font-size: pxtorem(34);
+        line-height: 1.4;
+    }
+
+    &__description {
+        color: $color-gray-600;
+        font-weight: 450;
+    }
+
+    &__divider {
+        width: 100%;
+        height: 1px;
+        margin: unquote("min(7vw, #{pxtorem(35)})") 0;
+        border: 0;
+        background: $color-gray-200;
+    }
+
+    &__features {
+        display: flex;
+        flex-direction: column;
+        gap: pxtorem(12);
+        margin: 0 0 pxtorem(30);
+        padding: 0 0 0 pxtorem(20);
+        color: $color-gray-600;
+        font-size: pxtorem(16);
+        line-height: 2.15;
+    }
+
+    &__options {
+        display: flex;
+        flex-direction: column;
+        gap: 10px;
+        margin-top: auto;
+    }
+
+    &__option {
+        display: flex;
+        justify-content: space-between;
+        background: $color-cool-gray-100;
+        padding: 15px;
+        border-radius: 3px;
+        text-decoration: none;
+        font-weight: 600;
+        margin-top: auto;
+        color: $color-gray-900;
+        transition: background 0.15s ease-out;
+
+        &:focus,
+        &:hover {
+            background: var(--color-accent);
+            color: #fff;
+        }
+    }
+}
+
+.theme--dark {
+    .plans {
+        &__plan {
+            background: $color-blue-gray-950;
+        }
+
+        &__title {
+            color: $color-white;
+        }
+
+        &__description {
+            color: $color-gray-200;
+        }
+
+        &__divider {
+            background: $color-gray-700;
+        }
+
+        &__features {
+            color: $color-gray-300;
+        }
+
+        &__option {
+            background: $color-gray-900;
+            color: $color-gray-100;
+
+            &:focus,
+            &:hover {
+                background: var(--color-accent);
+                color: $color-white;
+            }
+        }
+    }
+}

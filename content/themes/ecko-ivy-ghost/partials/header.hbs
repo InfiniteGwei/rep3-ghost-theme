@@ -1,0 +1,11 @@
+{{! Partial: Header - Index }}
+
+{{#is "index"}}
+    {{> "header/header-index"}}
+{{else is "conversations"}}
+    {{> "header/header-conversations"}}
+{{else is "media"}}
+    {{> "header/header-media"}}
+{{else is "updates"}}
+{{> "header/header-updates"}}
+{{/is}}

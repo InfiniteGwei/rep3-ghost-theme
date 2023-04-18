@@ -1,0 +1,43 @@
+/*------------------------------------------------------------------
+    Component: Widget - Share
+-------------------------------------------------------------------*/
+
+.widget-shre {
+    &__title {
+        margin: 0 0 pxtorem(30);
+        color: $color-white;
+        font-weight: 500;
+        font-size: pxtorem(22);
+    }
+
+    &__items {
+        display: grid;
+        grid-template-columns: repeat(2, 1fr);
+        gap: pxtorem(20);
+        margin: 0;
+        padding: 0;
+        list-style: none;
+    }
+
+    &__item {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        width: 100%;
+        height: pxtorem(50);
+        border-radius: 10px;
+        background: $color-gray-800;
+        color: $color-gray-200;
+        font-weight: 500;
+        font-size: 14px;
+
+        &:focus,
+        &:hover {
+            background: $color-gray-700;
+        }
+    }
+
+    &__svg {
+        margin-right: pxtorem(10);
+    }
+}

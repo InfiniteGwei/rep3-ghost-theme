@@ -1,0 +1,37 @@
+/**
+ *   Content - Element - Block - Quote
+ */
+
+blockquote {
+    max-width: pxtorem(770);
+    margin: $content_spacing_medium 0 $content_spacing_medium $content_spacing_base;
+    padding: $content_spacing_tiny $content_spacing_tiny $content_spacing_tiny $content_spacing_base;
+    border: 0 solid $color-gray-200;
+    border-left-width: pxtorem(5);
+    color: $color-gray-800;
+    font-weight: 500;
+    font-size: pxtorem(22);
+    font-family: var(--font-header);
+    line-height: pxtorem(38);
+
+    cite {
+        display: block;
+        margin-top: $content_spacing_tiny;
+        color: $color-gray-500;
+        font-weight: 400;
+        font-style: normal;
+        font-size: pxtorem(16);
+        line-height: normal;
+    }
+}
+
+@at-root .theme--dark .post-content {
+    blockquote {
+        color: $color-gray-200;
+        border-color: $color-gray-700;
+    }
+
+    cite {
+        color: $color-gray-400;
+    }
+}

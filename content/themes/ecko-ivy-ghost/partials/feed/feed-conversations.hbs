@@ -1,0 +1,9 @@
+    <div class="feed-conversations">
+    {{!-- {{#get "posts" limit="all"}} --}}
+        {{#foreach posts limit="all"}}
+            {{#has tag="conversations"}}
+            {{> "loop"}}
+            {{/has}}
+        {{/foreach}}
+    {{!-- {{/get}} --}}
+    </div>

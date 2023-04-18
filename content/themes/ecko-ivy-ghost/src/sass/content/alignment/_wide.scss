@@ -1,0 +1,33 @@
+/**
+ *   Content - Alignment - Wide
+ */
+
+.kg-width-wide {
+    position: relative;
+    width: calc(100% + #{ pxtorem(120) });
+    max-width: calc(100% + #{ pxtorem(120) });
+    margin-right: pxtorem(-60);
+    margin-left: pxtorem(-60);
+    margin-top: $content_spacing_medium;
+    margin-bottom: $content_spacing_medium;
+
+    img {
+        border-radius: 0;
+        width: 100%;
+    }
+
+    figcaption {
+        padding-left: pxtorem(60);
+        padding-right: pxtorem(60);
+    }
+
+    @media screen and (max-width: 1580px) {
+        width: 100%;
+        max-width: 100%;
+    }
+
+    @media screen and (max-width: 680px) {
+        margin-top: $content_spacing_medium;
+        margin-bottom: $content_spacing_medium;
+    }
+}
